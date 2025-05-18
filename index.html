@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .question {
+            margin-bottom: 20px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px 15px;
+            background: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        #result {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>General Knowledge Quiz</h1>
+    <div id="quiz-container"></div>
+    <button id="submit-btn">Submit Answers</button>
+    <div id="result"></div>
+
+    <script>
+        // Fetch and display questions
+        fetch('questions.json')
+            .then(response => response.json())
+            .then(questions => {
+                renderQuiz(questions);
+                
+                document.getElementById('submit-btn').addEventListener('click', () => {
+                    calculateScore(questions);
+                });
+            })
+            .catch(error => console.error('Error loading questions:', error));
+
+        function renderQuiz(questions) {
+            const container = document.getElementById('quiz-container');
+            
+            questions.forEach((q, index) => {
+                container.innerHTML += `
+                    <div class="question" id="q${index}">
+                        <h3>${index + 1}. ${q.question}</h3>
+                        ${q.options.map((opt, optIndex) => `
+                            <div>
+                                <input type="radio" 
+                                       id="q${index}-opt${optIndex}" 
+                                       name="q${index}" 
+                                       value="${opt}">
+                                <label for="q${index}-opt${optIndex}">${opt}</label>
+                            </div>
+                        `).join('')}
+                    </div>
+                `;
+            });
+        }
+
+        function calculateScore(questions) {
+            let score = 0;
+            
+            questions.forEach((q, index) => {
+                const selectedOption = document.querySelector(`input[name="q${index}"]:checked`);
+                
+                if (selectedOption && selectedOption.value === q.answer) {
+                    score++;
+                    document.getElementById(`q${index}`).style.backgroundColor = '#e6ffe6';
+                } else {
+                    document.getElementById(`q${index}`).style.backgroundColor = '#ffe6e6';
+                }
+            });
+            
+            document.getElementById('result').innerHTML = 
+                `Your score: ${score}/${questions.length}`;
+        }
+    </script>
+</body>
+</html>
