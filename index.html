@@ -15,7 +15,6 @@
             --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             --transition: all 0.3s ease;
         }
-        
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
@@ -25,7 +24,6 @@
             color: var(--dark-color);
             line-height: 1.6;
         }
-        
         .quiz-container {
             max-width: 800px;
             margin: 40px auto;
@@ -35,7 +33,6 @@
             box-shadow: var(--box-shadow);
             transition: var(--transition);
         }
-        
         h2 {
             color: var(--primary-color);
             text-align: center;
@@ -43,11 +40,7 @@
             font-weight: 600;
             font-size: 2rem;
         }
-        
-        .hidden { 
-            display: none; 
-        }
-        
+        .hidden { display: none; }
         .question {
             padding: 20px;
             border-radius: var(--border-radius);
@@ -57,62 +50,75 @@
             transition: var(--transition);
             box-shadow: 0 2px 4px rgba(0,0,0,0.05);
         }
-        
         .question:hover {
             transform: translateY(-2px);
             box-shadow: 0 6px 12px rgba(0,0,0,0.1);
         }
-        
         .question.correct {
             border-color: var(--success-color);
             background-color: rgba(76, 201, 240, 0.05);
         }
-        
         .question.wrong {
             border-color: var(--error-color);
             background-color: rgba(247, 37, 133, 0.05);
         }
-        
-        .choices label {
+        .choices {
+            margin-bottom: 10px;
+        }
+        .custom-radio {
+            position: relative;
             display: block;
             margin: 10px 0;
-            padding: 12px 15px;
+        }
+        .custom-radio input[type="radio"] {
+            opacity: 0;
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 22px;
+            height: 22px;
+            z-index: 2;
+            cursor: pointer;
+        }
+        .custom-radio label {
+            display: inline-block;
+            position: relative;
+            padding-left: 35px;
+            cursor: pointer;
+            user-select: none;
+            font-size: 1em;
+            transition: var(--transition);
             background: var(--light-color);
             border-radius: 8px;
-            cursor: pointer;
-            transition: var(--transition);
-            position: relative;
-            padding-left: 45px;
+            padding-top: 8px;
+            padding-bottom: 8px;
+            min-height: 30px;
+            width: 100%;
         }
-        
-        .choices label:hover {
+        .custom-radio label:hover {
             background: #e9ecef;
         }
-        
-        .choices input[type="radio"] {
-            position: absolute;
-            opacity: 0;
-        }
-        
-        .choices label::before {
+        .custom-radio label::before {
             content: '';
             position: absolute;
-            left: 15px;
+            left: 8px;
             top: 50%;
             transform: translateY(-50%);
             width: 18px;
             height: 18px;
             border: 2px solid var(--primary-color);
             border-radius: 50%;
+            background: #fff;
             transition: var(--transition);
         }
-        
-        .choices input[type="radio"]:checked + label::before {
+        .custom-radio input[type="radio"]:checked + label::before {
             background-color: var(--primary-color);
             border-color: var(--primary-color);
-            box-shadow: inset 0 0 0 3px white;
+            box-shadow: inset 0 0 0 5px #fff;
         }
-        
+        .custom-radio input[type="radio"]:focus + label::before {
+            outline: 2px solid var(--secondary-color);
+        }
         .explanation {
             margin-top: 15px;
             font-size: 0.95em;
@@ -122,7 +128,6 @@
             border-left: 4px solid var(--primary-color);
             border-radius: 0 var(--border-radius) var(--border-radius) 0;
         }
-        
         .btn {
             padding: 12px 24px;
             margin: 10px 5px 0 0;
@@ -136,35 +141,29 @@
             transition: var(--transition);
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
-        
         .btn:hover {
             background: var(--secondary-color);
             transform: translateY(-2px);
             box-shadow: 0 4px 8px rgba(0,0,0,0.15);
         }
-        
         .btn:active {
             transform: translateY(0);
         }
-        
         .btn:disabled {
             background: #adb5bd;
             cursor: not-allowed;
             transform: none;
             box-shadow: none;
         }
-        
         .quiz-options, .theme-list {
             margin-bottom: 25px;
             padding: 20px;
             background: #f8f9fa;
             border-radius: var(--border-radius);
         }
-        
         select, input[type="radio"] {
             margin-right: 8px;
         }
-        
         select {
             padding: 8px 12px;
             border-radius: 6px;
@@ -173,13 +172,11 @@
             font-size: 1em;
             margin-left: 10px;
         }
-        
         label {
             display: inline-block;
             margin-right: 15px;
             cursor: pointer;
         }
-        
         #result {
             padding: 20px;
             margin-top: 30px;
@@ -187,12 +184,10 @@
             border-radius: var(--border-radius);
             text-align: center;
         }
-        
         #result h3 {
             color: var(--primary-color);
             margin-bottom: 10px;
         }
-        
         .progress-bar {
             height: 10px;
             background: #e9ecef;
@@ -200,20 +195,17 @@
             margin: 20px 0;
             overflow: hidden;
         }
-        
         .progress {
             height: 100%;
             background: var(--primary-color);
             width: 0%;
             transition: width 0.5s ease;
         }
-        
         @media (max-width: 768px) {
             .quiz-container {
                 margin: 20px;
                 padding: 20px;
             }
-            
             .btn {
                 width: 100%;
                 margin-bottom: 10px;
@@ -222,15 +214,12 @@
     </style>
 </head>
 <body>
-<!-- The rest of your HTML remains exactly the same -->
 <div class="quiz-container">
     <h2>Quiz</h2>
     <div id="themeSelection" class="theme-list">
         <label for="theme">Choose a theme:</label>
         <select id="theme">
             <option value="" disabled selected>Select theme</option>
-            <!-- Dynamically fill options -->
-            <!-- Example: <option value="math">Math</option> -->
         </select>
     </div>
     <div id="quizOptions" class="quiz-options hidden">
@@ -255,11 +244,8 @@
     </form>
     <div id="result" class="hidden"></div>
 </div>
-
-<!-- The JavaScript remains exactly the same -->
 <script>
 // --- Config ---
-// List your available quiz JSON files and themes here:
 const THEMES = [
     { name: "Battles", file: "themes/battles.json" },
     { name: "Contemporary History", file: "themes/contemporaryHistory.json" },
@@ -315,12 +301,11 @@ quizOptions.addEventListener('change', (e) => {
 startQuizBtn.addEventListener('click', async () => {
     const themeFile = themeSelect.value;
     if (!themeFile) return;
-    // Load questions from json file
     questions = await fetch(themeFile).then(res => res.json());
-    // Shuffle and slice questions
     let count = numQuestionsSelect.value === "all" ? questions.length : parseInt(numQuestionsSelect.value);
     questions = shuffle(questions).slice(0, count);
     userAnswers = new Array(questions.length).fill(null);
+    currentQuestionIndex = 0;
     quizStarted = true;
     resultDiv.classList.add('hidden');
     if (quizMode === "all") {
@@ -348,10 +333,10 @@ function renderAllQuestions(showAnswers = false) {
             <div><b>Q${idx+1}:</b> ${q.question}</div>
             <div class="choices">
                 ${q.choices.map((choice, cidx) => `
-                    <label>
-                        <input type="radio" name="q${idx}" value="${choice}" ${userAnswers[idx] === choice ? "checked" : ""} ${showAnswers ? "disabled" : ""}>
-                        ${choice}
-                    </label>
+                    <div class="custom-radio">
+                        <input type="radio" id="q${idx}a${cidx}" name="q${idx}" value="${choice}" ${userAnswers[idx] === choice ? "checked" : ""} ${showAnswers ? "disabled" : ""}>
+                        <label for="q${idx}a${cidx}">${choice}</label>
+                    </div>
                 `).join('')}
             </div>
             <div class="explanation" style="display:${showAnswers ? "block" : "none"};">
@@ -372,10 +357,10 @@ function renderOneByOne(showAnswer = false) {
         <div><b>Q${currentQuestionIndex+1}:</b> ${q.question}</div>
         <div class="choices">
             ${q.choices.map((choice, cidx) => `
-                <label>
-                    <input type="radio" name="q${currentQuestionIndex}" value="${choice}" ${userAnswers[currentQuestionIndex] === choice ? "checked" : ""} ${showAnswer ? "disabled" : ""}>
-                    ${choice}
-                </label>
+                <div class="custom-radio">
+                    <input type="radio" id="q${currentQuestionIndex}a${cidx}" name="q${currentQuestionIndex}" value="${choice}" ${userAnswers[currentQuestionIndex] === choice ? "checked" : ""} ${showAnswer ? "disabled" : ""}>
+                    <label for="q${currentQuestionIndex}a${cidx}">${choice}</label>
+                </div>
             `).join('')}
         </div>
         <div class="explanation" style="display:${showAnswer ? "block" : "none"};">
@@ -391,8 +376,6 @@ function renderOneByOne(showAnswer = false) {
     if (currentQuestionIndex < questions.length - 1)
         navDiv.innerHTML += `<button type="button" class="btn" id="nextBtn">Next</button>`;
     questionsContainer.appendChild(navDiv);
-
-    //document.getElementById('quizForm').onsubmit = handleSubmit;
 
     // Navigation handlers
     if (document.getElementById('prevBtn')) {
@@ -413,7 +396,7 @@ function renderOneByOne(showAnswer = false) {
 
 // --- Save current answer (for onebyone mode) ---
 function saveCurrentAnswer() {
-    const radios = document.querySelectorAll(`input[name="q${currentQuestionIndex}"]`);
+    const radios = document.querySelectorAll(`input[name="${currentQuestionIndex}"]`);
     radios.forEach(radio => {
         if (radio.checked) userAnswers[currentQuestionIndex] = radio.value;
     });
@@ -433,7 +416,6 @@ quizForm.addEventListener('submit', function(e) {
         saveCurrentAnswer();
         renderOneByOne(true);
     }
-    // Show explanations and highlight answers
     showResult();
 });
 
