@@ -1,56 +1,315 @@
-/* Replace the existing .choices label and input styles with these: */
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Historical Events Quiz</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+      /* Your CSS from above goes here */
+    </style>
+</head>
+<body>
+<div class="quiz-container">
+    <h1>Important Dates Quiz</h1>
 
-.choices label {
-    display: block;
-    margin: 10px 0;
-    padding: 12px 15px;
-    background: var(--light-color);
-    border-radius: 8px;
-    cursor: pointer;
-    transition: var(--transition);
-    position: relative;
-    padding-left: 45px;
+    <!-- Theme Selection Screen -->
+    <div id="theme-screen" class="theme-screen active-screen">
+        <h2>Choose Quiz Theme</h2>
+        <div class="selection-options" id="theme-options"></div>
+        <div class="nav-buttons">
+            <button id="next-to-length">Next</button>
+        </div>
+    </div>
+
+    <!-- Length Selection Screen -->
+    <div id="length-screen" class="length-screen">
+        <h2 id="length-screen-title">Choose Quiz Length</h2>
+        <div class="selection-options" id="length-options"></div>
+        <div class="nav-buttons">
+            <button id="back-to-theme">Back</button>
+            <button id="start-quiz">Start Quiz</button>
+        </div>
+        <div class="one-at-a-time-option">
+            <button id="one-at-a-time">One Question At A Time</button>
+        </div>
+    </div>
+
+    <!-- Quiz Screen -->
+    <div id="quiz-screen" class="quiz-screen">
+        <div class="progress" id="progress"></div>
+        <div id="quiz"></div>
+        <div class="quiz-actions">
+            <button id="submit-quiz">Submit Quiz</button>
+            <button id="restart-quiz">Restart Quiz</button>
+        </div>
+    </div>
+
+    <!-- Results Screen -->
+    <div id="results-screen" class="results-screen">
+        <div class="score" id="final-score"></div>
+        <div id="results"></div>
+        <button id="restart">Take Another Quiz</button>
+    </div>
+</div>
+
+<script>
+// --- Theme/JSON Mapping ---
+const THEMES = [
+    { key: "battles", name: "Battles", description: "Important Battles and Treaties", file: "themes/battles.json" },
+    { key: "modernHistory", name: "Modern History", description: "Modern India and World", file: "themes/modernHistory.json" },
+    { key: "contemporary", name: "Contemporary India and World", description: "Post-independence India and World", file: "themes/contemporaryHistory.json" },
+];
+
+let selectedThemeKey = null;
+let selectedQuestions = [];
+let quizMode = 'all';
+let currentQuestionIndex = 0;
+let userAnswers = [];
+let score = 0;
+
+// --- DOM elements ---
+const themeScreen = document.getElementById('theme-screen');
+const lengthScreen = document.getElementById('length-screen');
+const quizScreen = document.getElementById('quiz-screen');
+const resultsScreen = document.getElementById('results-screen');
+const themeOptionsContainer = document.getElementById('theme-options');
+const lengthOptionsContainer = document.getElementById('length-options');
+const nextToLengthButton = document.getElementById('next-to-length');
+const backToThemeButton = document.getElementById('back-to-theme');
+const startQuizButton = document.getElementById('start-quiz');
+const oneAtATimeButton = document.getElementById('one-at-a-time');
+const quizContainer = document.getElementById('quiz');
+const submitQuizButton = document.getElementById('submit-quiz');
+const restartQuizButton = document.getElementById('restart-quiz');
+const finalRestartButton = document.getElementById('restart');
+const progressContainer = document.getElementById('progress');
+const resultsContainer = document.getElementById('results');
+const finalScoreContainer = document.getElementById('final-score');
+
+// --- Initialize theme options ---
+function initializeThemeOptions() {
+    themeOptionsContainer.innerHTML = '';
+    THEMES.forEach(theme => {
+        const div = document.createElement('div');
+        div.className = 'selection-option';
+        div.innerHTML = `
+            <input type="radio" name="quizTheme" value="${theme.key}" id="theme-${theme.key}">
+            <label for="theme-${theme.key}">
+                <strong>${theme.name}</strong>
+                <div class="theme-description">${theme.description}</div>
+            </label>
+        `;
+        themeOptionsContainer.appendChild(div);
+    });
+}
+initializeThemeOptions();
+
+// --- Length options ---
+function initializeLengthOptions(questionsCount) {
+    lengthOptionsContainer.innerHTML = '';
+    [10, 20, 30].forEach(n => {
+        if (n <= questionsCount) {
+            const div = document.createElement('div');
+            div.className = 'selection-option';
+            div.innerHTML = `<input type="radio" name="quizLength" value="${n}" id="length-${n}">
+                             <label for="length-${n}">${n} Questions</label>`;
+            lengthOptionsContainer.appendChild(div);
+        }
+    });
+    // Always add "Complete Set"
+    const div = document.createElement('div');
+    div.className = 'selection-option complete-set-option';
+    div.innerHTML = `<input type="radio" name="quizLength" value="${questionsCount}" id="length-complete">
+                     <label for="length-complete">Complete Set (${questionsCount} Questions)</label>`;
+    lengthOptionsContainer.appendChild(div);
 }
 
-.choices label:hover {
-    background: #e9ecef;
+// --- Navigation ---
+nextToLengthButton.addEventListener('click', async () => {
+    const selected = document.querySelector('input[name="quizTheme"]:checked');
+    if (!selected) { alert("Pick a theme!"); return; }
+    selectedThemeKey = selected.value;
+    // Fetch just to get count for options
+    const theme = THEMES.find(t => t.key === selectedThemeKey);
+    const questions = await fetch(theme.file).then(r => r.json());
+    initializeLengthOptions(questions.length);
+    themeScreen.classList.remove('active-screen');
+    lengthScreen.classList.add('active-screen');
+});
+backToThemeButton.addEventListener('click', () => {
+    lengthScreen.classList.remove('active-screen');
+    themeScreen.classList.add('active-screen');
+});
+
+// --- Start Quiz ---
+startQuizButton.addEventListener('click', () => startQuiz('all'));
+oneAtATimeButton.addEventListener('click', () => startQuiz('one'));
+
+async function startQuiz(mode) {
+    const selectedLen = document.querySelector('input[name="quizLength"]:checked');
+    if (!selectedLen) { alert("Pick a quiz length!"); return; }
+    quizMode = mode;
+    currentQuestionIndex = 0;
+    userAnswers = [];
+    score = 0;
+    // Fetch questions
+    const theme = THEMES.find(t => t.key === selectedThemeKey);
+    let questions = await fetch(theme.file).then(r => r.json());
+    questions = shuffleArray(questions);
+    selectedQuestions = questions.slice(0, parseInt(selectedLen.value));
+    // Move to quiz screen
+    lengthScreen.classList.remove('active-screen');
+    quizScreen.classList.add('active-screen');
+    resultsScreen.classList.remove('active-screen');
+    showQuestions();
 }
 
-.choices input[type="radio"] {
-    position: absolute;
-    opacity: 0;
-    width: 0;
-    height: 0;
+// --- Shuffle utility ---
+function shuffleArray(array) {
+    for (let i = array.length-1; i > 0; i--) {
+        const j = Math.floor(Math.random()*(i+1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
 }
 
-.choices label::before {
-    content: '';
-    position: absolute;
-    left: 15px;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 18px;
-    height: 18px;
-    border: 2px solid var(--primary-color);
-    border-radius: 50%;
-    transition: var(--transition);
+// --- Show Questions ---
+function showQuestions() {
+    progressContainer.textContent = `Question ${quizMode === 'one' ? (currentQuestionIndex + 1) : selectedQuestions.length} of ${selectedQuestions.length}`;
+    if (quizMode === 'all') {
+        let html = '';
+        selectedQuestions.forEach((q, idx) => {
+            html += `
+                <div class="question" id="question-${idx}">
+                    <div class="question-text"><strong>${idx + 1}. ${q.question}</strong></div>
+                    <div class="options">
+                        ${q.options.map((opt, i) => `
+                            <div class="option">
+                                <input type="radio" name="question${idx}" value="${opt}" id="q${idx}option${i}">
+                                <label for="q${idx}option${i}">${opt}</label>
+                            </div>
+                        `).join('')}
+                    </div>
+                    <div class="explanation" id="explanation-${idx}">${q.explanation}</div>
+                </div>
+            `;
+        });
+        quizContainer.innerHTML = html;
+        submitQuizButton.style.display = '';
+        restartQuizButton.style.display = '';
+    } else {
+        showSingleQuestion();
+        submitQuizButton.style.display = 'none';
+        restartQuizButton.style.display = '';
+    }
 }
 
-.choices input[type="radio"]:checked + label::before {
-    background-color: var(--primary-color);
-    border-color: var(--primary-color);
-    box-shadow: inset 0 0 0 3px white;
+// --- One-by-one mode ---
+function showSingleQuestion() {
+    const q = selectedQuestions[currentQuestionIndex];
+    quizContainer.innerHTML = `
+        <div class="question" id="question-single">
+            <div class="question-text"><strong>Question ${currentQuestionIndex + 1} of ${selectedQuestions.length}: ${q.question}</strong></div>
+            <div class="options">
+                ${q.options.map((opt, idx) => `
+                    <div class="option">
+                        <input type="radio" name="questionSingle" value="${opt}" id="qSingleOption${idx}">
+                        <label for="qSingleOption${idx}">${opt}</label>
+                    </div>
+                `).join('')}
+            </div>
+            <div class="explanation" id="explanation-single" style="display:none;">${q.explanation}</div>
+            <button id="submit-single">Submit</button>
+        </div>
+    `;
+    document.getElementById('submit-single').onclick = checkSingleAnswer;
+}
+function checkSingleAnswer() {
+    const q = selectedQuestions[currentQuestionIndex];
+    const selected = document.querySelector('input[name="questionSingle"]:checked');
+    const explanationElement = document.getElementById('explanation-single');
+    if (!selected) { alert('Select an option!'); return; }
+    const userAnswer = selected.value;
+    const isCorrect = userAnswer.replace(/\s+/g, '') === q.answer.replace(/\s+/g, '');
+    userAnswers.push({ question: q.question, userAnswer, correctAnswer: q.answer, isCorrect, explanation: q.explanation });
+    if (isCorrect) { document.getElementById('question-single').classList.add('correct'); score++; }
+    else { document.getElementById('question-single').classList.add('incorrect'); }
+    explanationElement.style.display = 'block';
+    document.querySelectorAll('input[name="questionSingle"]').forEach(inp => inp.disabled = true);
+    const submitBtn = document.getElementById('submit-single');
+    if (currentQuestionIndex < selectedQuestions.length - 1) {
+        submitBtn.textContent = 'Next';
+        submitBtn.onclick = () => { currentQuestionIndex++; showSingleQuestion(); };
+    } else {
+        submitBtn.textContent = 'Finish';
+        submitBtn.onclick = showResults;
+    }
 }
 
-/* Make sure the actual radio input is clickable */
-.choices input[type="radio"] {
-    position: absolute;
-    left: 15px;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 18px;
-    height: 18px;
-    opacity: 0;
-    z-index: 1; /* Ensure it's above the custom design */
-    cursor: pointer;
+// --- Submit/Restart ---
+submitQuizButton.onclick = checkAnswers;
+restartQuizButton.onclick = resetQuiz;
+finalRestartButton.onclick = resetQuiz;
+
+// --- Check Answers (all-at-once mode) ---
+function checkAnswers() {
+    let answeredAll = true;
+    userAnswers = [];
+    score = 0;
+    selectedQuestions.forEach((q, idx) => {
+        const sel = document.querySelector(`input[name="question${idx}"]:checked`);
+        const questionDiv = document.getElementById(`question-${idx}`);
+        const explanationDiv = document.getElementById(`explanation-${idx}`);
+        let userAnswer = '';
+        let isCorrect = false;
+        if (!sel) {
+            answeredAll = false;
+            questionDiv.style.border = "2px solid #ffcc00";
+            explanationDiv.style.display = 'block';
+        } else {
+            userAnswer = sel.value;
+            isCorrect = userAnswer.replace(/\s+/g, '') === q.answer.replace(/\s+/g, '');
+            if (isCorrect) { score++; questionDiv.classList.add('correct'); }
+            else { questionDiv.classList.add('incorrect'); }
+            explanationDiv.style.display = 'block';
+        }
+        userAnswers.push({ question: q.question, userAnswer: userAnswer || '<em>No answer</em>', correctAnswer: q.answer, isCorrect, explanation: q.explanation });
+    });
+    if (!answeredAll) { alert('Please answer all questions before submitting!'); return; }
+    showResults();
 }
+
+// --- Show Results ---
+function showResults() {
+    quizScreen.classList.remove('active-screen');
+    resultsScreen.classList.add('active-screen');
+    finalScoreContainer.textContent = `You scored ${score} out of ${selectedQuestions.length}`;
+    let html = '';
+    userAnswers.forEach((ans, idx) => {
+        html += `
+            <div class="question ${ans.isCorrect ? 'correct' : 'incorrect'}">
+                <p><strong>Q${idx+1}: ${ans.question}</strong></p>
+                <p>Your answer: ${ans.userAnswer} ${ans.isCorrect ? '✓' : '✗'}</p>
+                ${!ans.isCorrect ? `<p>Correct answer: ${ans.correctAnswer}</p>` : ''}
+                <p class="explanation show">Explanation: ${ans.explanation}</p>
+            </div>
+        `;
+    });
+    resultsContainer.innerHTML = html;
+}
+
+// --- Reset ---
+function resetQuiz() {
+    currentQuestionIndex = 0;
+    userAnswers = [];
+    themeScreen.classList.add('active-screen');
+    lengthScreen.classList.remove('active-screen');
+    quizScreen.classList.remove('active-screen');
+    resultsScreen.classList.remove('active-screen');
+    resultsContainer.innerHTML = '';
+    finalScoreContainer.textContent = '';
+}
+
+</script>
+</body>
+</html>
