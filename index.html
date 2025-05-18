@@ -6,327 +6,220 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         :root {
-            --primary: #4361ee;
-            --primary-dark: #3a0ca3;
-            --secondary: #4cc9f0;
-            --success: #2ecc71;
-            --danger: #e74c3c;
-            --warning: #f39c12;
-            --light: #f8f9fa;
-            --dark: #212529;
-            --gray: #6c757d;
-            --border-radius: 8px;
+            --primary-color: #4361ee;
+            --secondary-color: #3f37c9;
+            --success-color: #4cc9f0;
+            --error-color: #f72585;
+            --light-color: #f8f9fa;
+            --dark-color: #212529;
+            --border-radius: 12px;
             --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             --transition: all 0.3s ease;
         }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
+        
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
             background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-            color: var(--dark);
-            line-height: 1.6;
             min-height: 100vh;
-            padding: 20px;
+            color: var(--dark-color);
+            line-height: 1.6;
         }
-
+        
         .quiz-container {
             max-width: 800px;
-            margin: 0 auto;
+            margin: 40px auto;
             background: white;
+            padding: 30px;
             border-radius: var(--border-radius);
             box-shadow: var(--box-shadow);
-            overflow: hidden;
+            transition: var(--transition);
         }
-
+        
         h1, h2 {
-            color: var(--primary);
+            color: var(--primary-color);
             text-align: center;
-            padding: 20px;
-            margin: 0;
+            margin-bottom: 25px;
+            font-weight: 600;
         }
-
+        
         h1 {
-            background: var(--primary);
-            color: white;
-            font-size: 1.8rem;
+            font-size: 2rem;
         }
-
-        h2 {
-            font-size: 1.5rem;
-            padding-bottom: 10px;
-        }
-
+        
         .active-screen {
             display: block;
-            padding: 20px;
-            animation: fadeIn 0.5s ease;
         }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
+        
         .theme-screen, .length-screen, .quiz-screen, .results-screen {
             display: none;
         }
-
+        
         .selection-options {
             display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
             gap: 15px;
-            margin: 20px 0;
+            margin-bottom: 25px;
         }
-
+        
         .selection-option {
-            position: relative;
-        }
-
-        .selection-option input[type="radio"] {
-            position: absolute;
-            opacity: 0;
-            width: 0;
-            height: 0;
-        }
-
-        .selection-option label {
-            display: block;
             padding: 15px;
-            background: var(--light);
             border-radius: var(--border-radius);
-            cursor: pointer;
+            background: var(--light-color);
             transition: var(--transition);
+            cursor: pointer;
             border: 2px solid transparent;
         }
-
-        .selection-option input[type="radio"]:checked + label {
-            border-color: var(--primary);
-            background: rgba(67, 97, 238, 0.1);
+        
+        .selection-option:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--box-shadow);
         }
-
-        .selection-option label:hover {
-            background: #e9ecef;
+        
+        .selection-option input[type="radio"] {
+            display: none;
         }
-
+        
+        .selection-option.selected {
+            border-color: var(--primary-color);
+            background-color: rgba(67, 97, 238, 0.1);
+        }
+        
         .theme-description {
-            color: var(--gray);
-            font-size: 0.9rem;
+            font-size: 0.9em;
+            color: #6c757d;
             margin-top: 5px;
         }
-
-        .nav-buttons {
+        
+        .nav-buttons, .quiz-actions, .one-at-a-time-option {
             display: flex;
-            justify-content: space-between;
-            margin-top: 20px;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 25px;
         }
-
-        .one-at-a-time-option {
-            margin-top: 20px;
-            text-align: center;
-        }
-
+        
         button {
             padding: 12px 24px;
             border: none;
-            border-radius: var(--border-radius);
-            background: var(--primary);
+            border-radius: 8px;
+            background: var(--primary-color);
             color: white;
-            font-weight: 600;
             cursor: pointer;
+            font-size: 1em;
+            font-weight: 500;
             transition: var(--transition);
-            font-size: 1rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
-
+        
         button:hover {
-            background: var(--primary-dark);
+            background: var(--secondary-color);
             transform: translateY(-2px);
-            box-shadow: var(--box-shadow);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
         }
-
+        
         button:active {
             transform: translateY(0);
         }
-
-        button.secondary {
-            background: var(--gray);
+        
+        button:disabled {
+            background: #adb5bd;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
         }
-
-        button.secondary:hover {
-            background: #5a6268;
-        }
-
-        /* Quiz Screen Styles */
+        
         .progress {
-            background: var(--light);
-            height: 10px;
-            border-radius: 5px;
+            text-align: center;
+            font-weight: bold;
             margin-bottom: 20px;
-            overflow: hidden;
+            color: var(--primary-color);
         }
-
-        .progress-bar {
-            height: 100%;
-            background: var(--primary);
-            width: 0%;
-            transition: width 0.5s ease;
-        }
-
+        
         .question {
             padding: 20px;
-            margin-bottom: 20px;
             border-radius: var(--border-radius);
+            margin-bottom: 20px;
             background: white;
-            box-shadow: var(--box-shadow);
+            border-left: 5px solid var(--primary-color);
+            transition: var(--transition);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
         }
-
+        
+        .question.correct {
+            border-color: var(--success-color);
+            background-color: rgba(76, 201, 240, 0.05);
+        }
+        
+        .question.incorrect {
+            border-color: var(--error-color);
+            background-color: rgba(247, 37, 133, 0.05);
+        }
+        
         .question-text {
-            font-weight: 600;
             margin-bottom: 15px;
-            font-size: 1.1rem;
+            font-size: 1.1em;
         }
-
+        
         .options {
-            display: grid;
+            display: flex;
+            flex-direction: column;
             gap: 10px;
         }
-
+        
         .option {
-            position: relative;
-        }
-
-        .option input[type="radio"] {
-            position: absolute;
-            opacity: 0;
-            width: 0;
-            height: 0;
-        }
-
-        .option label {
-            display: block;
-            padding: 12px 15px 12px 45px;
-            background: var(--light);
-            border-radius: var(--border-radius);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 15px;
+            background: var(--light-color);
+            border-radius: 8px;
             cursor: pointer;
             transition: var(--transition);
         }
-
-        .option label:hover {
+        
+        .option:hover {
             background: #e9ecef;
         }
-
-        .option label::before {
-            content: '';
-            position: absolute;
-            left: 15px;
-            top: 50%;
-            transform: translateY(-50%);
+        
+        .option input[type="radio"] {
             width: 18px;
             height: 18px;
-            border: 2px solid var(--primary);
-            border-radius: 50%;
-            transition: var(--transition);
+            cursor: pointer;
         }
-
-        .option input[type="radio"]:checked + label::before {
-            background-color: var(--primary);
-            border-color: var(--primary);
-            box-shadow: inset 0 0 0 3px white;
-        }
-
+        
         .explanation {
             margin-top: 15px;
             padding: 15px;
             background: #f8f9fa;
-            border-left: 4px solid var(--primary);
+            border-left: 4px solid var(--primary-color);
             border-radius: 0 var(--border-radius) var(--border-radius) 0;
             display: none;
         }
-
+        
         .show {
             display: block !important;
         }
-
-        .correct {
-            border-left: 4px solid var(--success);
-        }
-
-        .incorrect {
-            border-left: 4px solid var(--danger);
-        }
-
-        .quiz-actions {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 20px;
-        }
-
-        /* Results Screen */
+        
         .score {
-            font-size: 1.5rem;
+            font-size: 1.5em;
             font-weight: bold;
             text-align: center;
             margin-bottom: 20px;
-            color: var(--primary);
+            color: var(--primary-color);
         }
-
-        .results {
-            max-height: 400px;
-            overflow-y: auto;
-            padding-right: 10px;
-        }
-
-        .results::-webkit-scrollbar {
-            width: 8px;
-        }
-
-        .results::-webkit-scrollbar-track {
-            background: #f1f1f1;
-            border-radius: 10px;
-        }
-
-        .results::-webkit-scrollbar-thumb {
-            background: var(--primary);
-            border-radius: 10px;
-        }
-
-        .results .question {
-            margin-bottom: 15px;
-        }
-
-        .results p {
-            margin-bottom: 8px;
-        }
-
-        .correct-answer {
-            color: var(--success);
-            font-weight: 600;
-        }
-
-        .user-answer {
-            color: var(--danger);
-            font-weight: 600;
-        }
-
-        /* Responsive */
+        
         @media (max-width: 768px) {
-            body {
-                padding: 10px;
-            }
-            
             .quiz-container {
-                border-radius: 0;
+                margin: 20px;
+                padding: 20px;
             }
             
             .selection-options {
                 grid-template-columns: 1fr;
             }
             
-            .nav-buttons {
+            .nav-buttons, .quiz-actions {
                 flex-direction: column;
                 gap: 10px;
             }
@@ -339,14 +232,14 @@
 </head>
 <body>
 <div class="quiz-container">
-    <h1>Historical Events Quiz</h1>
+    <h1>Important Dates Quiz</h1>
 
     <!-- Theme Selection Screen -->
     <div id="theme-screen" class="theme-screen active-screen">
         <h2>Choose Quiz Theme</h2>
         <div class="selection-options" id="theme-options"></div>
         <div class="nav-buttons">
-            <button id="next-to-length">Next →</button>
+            <button id="next-to-length">Next</button>
         </div>
     </div>
 
@@ -355,7 +248,7 @@
         <h2 id="length-screen-title">Choose Quiz Length</h2>
         <div class="selection-options" id="length-options"></div>
         <div class="nav-buttons">
-            <button id="back-to-theme" class="secondary">← Back</button>
+            <button id="back-to-theme">Back</button>
             <button id="start-quiz">Start Quiz</button>
         </div>
         <div class="one-at-a-time-option">
@@ -365,23 +258,19 @@
 
     <!-- Quiz Screen -->
     <div id="quiz-screen" class="quiz-screen">
-        <div class="progress">
-            <div class="progress-bar" id="progress-bar"></div>
-        </div>
+        <div class="progress" id="progress"></div>
         <div id="quiz"></div>
         <div class="quiz-actions">
             <button id="submit-quiz">Submit Quiz</button>
-            <button id="restart-quiz" class="secondary">Restart Quiz</button>
+            <button id="restart-quiz">Restart Quiz</button>
         </div>
     </div>
 
     <!-- Results Screen -->
     <div id="results-screen" class="results-screen">
         <div class="score" id="final-score"></div>
-        <div class="results" id="results"></div>
-        <div class="nav-buttons">
-            <button id="restart">Take Another Quiz</button>
-        </div>
+        <div id="results"></div>
+        <button id="restart">Take Another Quiz</button>
     </div>
 </div>
 
@@ -390,49 +279,38 @@
 const THEMES = [
     { key: "battles", name: "Battles", description: "Important Battles and Treaties", file: "themes/battles.json" },
     { key: "modernHistory", name: "Modern History", description: "Modern India and World", file: "themes/modernHistory.json" },
-    { key: "contemporary", name: "Contemporary India", description: "Post-independence India and World", file: "themes/contemporaryHistory.json" },
+    { key: "contemporary", name: "Contemporary India and World", description: "Post-independence India and World", file: "themes/contemporaryHistory.json" },
 ];
 
-// --- Quiz State ---
-let quizState = {
-    selectedThemeKey: null,
-    selectedQuestions: [],
-    quizMode: 'all',
-    currentQuestionIndex: 0,
-    userAnswers: [],
-    score: 0
-};
+let selectedThemeKey = null;
+let selectedQuestions = [];
+let quizMode = 'all';
+let currentQuestionIndex = 0;
+let userAnswers = [];
+let score = 0;
 
 // --- DOM elements ---
-const screens = {
-    theme: document.getElementById('theme-screen'),
-    length: document.getElementById('length-screen'),
-    quiz: document.getElementById('quiz-screen'),
-    results: document.getElementById('results-screen')
-};
-
-const containers = {
-    themeOptions: document.getElementById('theme-options'),
-    lengthOptions: document.getElementById('length-options'),
-    quiz: document.getElementById('quiz'),
-    results: document.getElementById('results'),
-    progressBar: document.getElementById('progress-bar'),
-    finalScore: document.getElementById('final-score')
-};
-
-const buttons = {
-    nextToLength: document.getElementById('next-to-length'),
-    backToTheme: document.getElementById('back-to-theme'),
-    startQuiz: document.getElementById('start-quiz'),
-    oneAtATime: document.getElementById('one-at-a-time'),
-    submitQuiz: document.getElementById('submit-quiz'),
-    restartQuiz: document.getElementById('restart-quiz'),
-    restart: document.getElementById('restart')
-};
+const themeScreen = document.getElementById('theme-screen');
+const lengthScreen = document.getElementById('length-screen');
+const quizScreen = document.getElementById('quiz-screen');
+const resultsScreen = document.getElementById('results-screen');
+const themeOptionsContainer = document.getElementById('theme-options');
+const lengthOptionsContainer = document.getElementById('length-options');
+const nextToLengthButton = document.getElementById('next-to-length');
+const backToThemeButton = document.getElementById('back-to-theme');
+const startQuizButton = document.getElementById('start-quiz');
+const oneAtATimeButton = document.getElementById('one-at-a-time');
+const quizContainer = document.getElementById('quiz');
+const submitQuizButton = document.getElementById('submit-quiz');
+const restartQuizButton = document.getElementById('restart-quiz');
+const finalRestartButton = document.getElementById('restart');
+const progressContainer = document.getElementById('progress');
+const resultsContainer = document.getElementById('results');
+const finalScoreContainer = document.getElementById('final-score');
 
 // --- Initialize theme options ---
 function initializeThemeOptions() {
-    containers.themeOptions.innerHTML = '';
+    themeOptionsContainer.innerHTML = '';
     THEMES.forEach(theme => {
         const div = document.createElement('div');
         div.className = 'selection-option';
@@ -443,315 +321,316 @@ function initializeThemeOptions() {
                 <div class="theme-description">${theme.description}</div>
             </label>
         `;
-        containers.themeOptions.appendChild(div);
+        themeOptionsContainer.appendChild(div);
+        
+        // Add click handler for better mobile experience
+        div.addEventListener('click', function() {
+            document.querySelectorAll('.selection-option').forEach(opt => opt.classList.remove('selected'));
+            this.classList.add('selected');
+            document.getElementById(`theme-${theme.key}`).checked = true;
+        });
     });
 }
+initializeThemeOptions();
 
-// --- Initialize length options ---
+// --- Length options ---
 function initializeLengthOptions(questionsCount) {
-    containers.lengthOptions.innerHTML = '';
-    
-    // Create standard length options (10, 20, 30)
+    lengthOptionsContainer.innerHTML = '';
     [10, 20, 30].forEach(n => {
         if (n <= questionsCount) {
             const div = document.createElement('div');
             div.className = 'selection-option';
-            div.innerHTML = `
-                <input type="radio" name="quizLength" value="${n}" id="length-${n}">
-                <label for="length-${n}">${n} Questions</label>
-            `;
-            containers.lengthOptions.appendChild(div);
+            div.innerHTML = `<input type="radio" name="quizLength" value="${n}" id="length-${n}">
+                             <label for="length-${n}">${n} Questions</label>`;
+            lengthOptionsContainer.appendChild(div);
+            
+            // Add click handler
+            div.addEventListener('click', function() {
+                document.querySelectorAll('.selection-option').forEach(opt => opt.classList.remove('selected'));
+                this.classList.add('selected');
+                document.getElementById(`length-${n}`).checked = true;
+            });
         }
     });
-    
-    // Add "Complete Set" option
+    // Always add "Complete Set"
     const div = document.createElement('div');
-    div.className = 'selection-option';
-    div.innerHTML = `
-        <input type="radio" name="quizLength" value="${questionsCount}" id="length-complete">
-        <label for="length-complete">Complete Set (${questionsCount} Questions)</label>
-    `;
-    containers.lengthOptions.appendChild(div);
+    div.className = 'selection-option complete-set-option';
+    div.innerHTML = `<input type="radio" name="quizLength" value="${questionsCount}" id="length-complete">
+                     <label for="length-complete">Complete Set (${questionsCount} Questions)</label>`;
+    lengthOptionsContainer.appendChild(div);
     
-    // Auto-select the first option
-    const firstOption = containers.lengthOptions.querySelector('input[type="radio"]');
-    if (firstOption) firstOption.checked = true;
+    // Add click handler
+    div.addEventListener('click', function() {
+        document.querySelectorAll('.selection-option').forEach(opt => opt.classList.remove('selected'));
+        this.classList.add('selected');
+        document.getElementById('length-complete').checked = true;
+    });
 }
 
-// --- Navigation Functions ---
-function showScreen(screenName) {
-    Object.values(screens).forEach(screen => screen.classList.remove('active-screen'));
-    screens[screenName].classList.add('active-screen');
-}
-
-// --- Event Listeners ---
-buttons.nextToLength.addEventListener('click', async () => {
-    const selectedTheme = document.querySelector('input[name="quizTheme"]:checked');
-    if (!selectedTheme) {
-        alert("Please select a quiz theme!");
-        return;
-    }
-    
-    quizState.selectedThemeKey = selectedTheme.value;
-    const theme = THEMES.find(t => t.key === quizState.selectedThemeKey);
-    
+// --- Navigation ---
+nextToLengthButton.addEventListener('click', async () => {
+    const selected = document.querySelector('input[name="quizTheme"]:checked');
+    if (!selected) { alert("Please select a theme!"); return; }
+    selectedThemeKey = selected.value;
+    // Fetch just to get count for options
     try {
+        const theme = THEMES.find(t => t.key === selectedThemeKey);
         const response = await fetch(theme.file);
+        if (!response.ok) throw new Error("Failed to fetch questions");
         const questions = await response.json();
         initializeLengthOptions(questions.length);
-        showScreen('length');
+        themeScreen.classList.remove('active-screen');
+        lengthScreen.classList.add('active-screen');
     } catch (error) {
         console.error("Error loading questions:", error);
-        alert("Failed to load quiz questions. Please try again.");
+        alert("Failed to load questions. Please try again.");
     }
 });
 
-buttons.backToTheme.addEventListener('click', () => {
-    showScreen('theme');
+backToThemeButton.addEventListener('click', () => {
+    lengthScreen.classList.remove('active-screen');
+    themeScreen.classList.add('active-screen');
 });
 
-buttons.startQuiz.addEventListener('click', () => startQuiz('all'));
-buttons.oneAtATime.addEventListener('click', () => startQuiz('one'));
+// --- Start Quiz ---
+startQuizButton.addEventListener('click', () => startQuiz('all'));
+oneAtATimeButton.addEventListener('click', () => startQuiz('one'));
 
-buttons.submitQuiz.addEventListener('click', checkAnswers);
-buttons.restartQuiz.addEventListener('click', resetQuiz);
-buttons.restart.addEventListener('click', resetQuiz);
-
-// --- Quiz Functions ---
 async function startQuiz(mode) {
-    const selectedLength = document.querySelector('input[name="quizLength"]:checked');
-    if (!selectedLength) {
-        alert("Please select a quiz length!");
-        return;
-    }
+    const selectedLen = document.querySelector('input[name="quizLength"]:checked');
+    if (!selectedLen) { alert("Please select a quiz length!"); return; }
+    quizMode = mode;
+    currentQuestionIndex = 0;
+    userAnswers = [];
+    score = 0;
     
-    quizState.quizMode = mode;
-    quizState.currentQuestionIndex = 0;
-    quizState.userAnswers = [];
-    quizState.score = 0;
-    
-    const theme = THEMES.find(t => t.key === quizState.selectedThemeKey);
     try {
+        // Fetch questions
+        const theme = THEMES.find(t => t.key === selectedThemeKey);
         const response = await fetch(theme.file);
+        if (!response.ok) throw new Error("Failed to fetch questions");
         let questions = await response.json();
         questions = shuffleArray(questions);
+        selectedQuestions = questions.slice(0, parseInt(selectedLen.value));
         
-        const questionCount = parseInt(selectedLength.value);
-        quizState.selectedQuestions = questions.slice(0, questionCount);
-        
-        showScreen('quiz');
-        updateProgress();
-        renderQuestions();
+        // Move to quiz screen
+        lengthScreen.classList.remove('active-screen');
+        quizScreen.classList.add('active-screen');
+        resultsScreen.classList.remove('active-screen');
+        showQuestions();
     } catch (error) {
         console.error("Error starting quiz:", error);
         alert("Failed to start quiz. Please try again.");
     }
 }
 
+// --- Shuffle utility ---
 function shuffleArray(array) {
     const newArray = [...array];
-    for (let i = newArray.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
+    for (let i = newArray.length-1; i > 0; i--) {
+        const j = Math.floor(Math.random()*(i+1));
         [newArray[i], newArray[j]] = [newArray[j], newArray[i]];
     }
     return newArray;
 }
 
-function updateProgress() {
-    const progress = quizState.quizMode === 'one' 
-        ? (quizState.currentQuestionIndex + 1) / quizState.selectedQuestions.length * 100
-        : 100;
-    
-    containers.progressBar.style.width = `${progress}%`;
-}
-
-function renderQuestions() {
-    containers.quiz.innerHTML = '';
-    
-    if (quizState.quizMode === 'all') {
-        renderAllQuestions();
-        buttons.submitQuiz.style.display = '';
-        buttons.restartQuiz.style.display = '';
+// --- Show Questions ---
+function showQuestions() {
+    progressContainer.textContent = `Question ${quizMode === 'one' ? (currentQuestionIndex + 1) : selectedQuestions.length} of ${selectedQuestions.length}`;
+    if (quizMode === 'all') {
+        let html = '';
+        selectedQuestions.forEach((q, idx) => {
+            html += `
+                <div class="question" id="question-${idx}">
+                    <div class="question-text"><strong>${idx + 1}. ${q.question}</strong></div>
+                    <div class="options">
+                        ${q.options.map((opt, i) => `
+                            <div class="option">
+                                <input type="radio" name="question${idx}" value="${opt}" id="q${idx}option${i}">
+                                <label for="q${idx}option${i}">${opt}</label>
+                            </div>
+                        `).join('')}
+                    </div>
+                    <div class="explanation" id="explanation-${idx}">${q.explanation}</div>
+                </div>
+            `;
+        });
+        quizContainer.innerHTML = html;
+        submitQuizButton.style.display = '';
+        restartQuizButton.style.display = '';
     } else {
-        renderSingleQuestion();
-        buttons.submitQuiz.style.display = 'none';
-        buttons.restartQuiz.style.display = '';
+        showSingleQuestion();
+        submitQuizButton.style.display = 'none';
+        restartQuizButton.style.display = '';
     }
 }
 
-function renderAllQuestions() {
-    let html = '';
-    quizState.selectedQuestions.forEach((question, index) => {
-        html += `
-            <div class="question" id="question-${index}">
-                <div class="question-text">${index + 1}. ${question.question}</div>
-                <div class="options">
-                    ${question.options.map((option, optIndex) => `
-                        <div class="option">
-                            <input type="radio" name="question-${index}" value="${option}" id="q${index}-opt${optIndex}">
-                            <label for="q${index}-opt${optIndex}">${option}</label>
-                        </div>
-                    `).join('')}
-                </div>
-                <div class="explanation" id="explanation-${index}">${question.explanation}</div>
-            </div>
-        `;
-    });
-    
-    containers.quiz.innerHTML = html;
-}
-
-function renderSingleQuestion() {
-    const question = quizState.selectedQuestions[quizState.currentQuestionIndex];
-    const isLastQuestion = quizState.currentQuestionIndex === quizState.selectedQuestions.length - 1;
-    
-    containers.quiz.innerHTML = `
+// --- One-by-one mode ---
+function showSingleQuestion() {
+    const q = selectedQuestions[currentQuestionIndex];
+    quizContainer.innerHTML = `
         <div class="question" id="question-single">
-            <div class="question-text">Question ${quizState.currentQuestionIndex + 1} of ${quizState.selectedQuestions.length}: ${question.question}</div>
+            <div class="question-text"><strong>Question ${currentQuestionIndex + 1} of ${selectedQuestions.length}: ${q.question}</strong></div>
             <div class="options">
-                ${question.options.map((option, optIndex) => `
+                ${q.options.map((opt, idx) => `
                     <div class="option">
-                        <input type="radio" name="question-single" value="${option}" id="q-single-opt${optIndex}">
-                        <label for="q-single-opt${optIndex}">${option}</label>
+                        <input type="radio" name="questionSingle" value="${opt}" id="qSingleOption${idx}">
+                        <label for="qSingleOption${idx}">${opt}</label>
                     </div>
                 `).join('')}
             </div>
-            <div class="explanation" id="explanation-single">${question.explanation}</div>
-            <div class="nav-buttons" style="margin-top:20px;">
-                <button id="submit-single">${isLastQuestion ? 'Finish Quiz' : 'Submit Answer'}</button>
+            <div class="explanation" id="explanation-single" style="display:none;">${q.explanation}</div>
+            <div class="quiz-actions" style="margin-top:20px;">
+                <button id="submit-single">Submit Answer</button>
             </div>
         </div>
     `;
-    
-    document.getElementById('submit-single').addEventListener('click', checkSingleAnswer);
+    document.getElementById('submit-single').onclick = checkSingleAnswer;
 }
 
 function checkSingleAnswer() {
-    const selectedOption = document.querySelector('input[name="question-single"]:checked');
-    if (!selectedOption) {
-        alert('Please select an answer!');
-        return;
+    const q = selectedQuestions[currentQuestionIndex];
+    const selected = document.querySelector('input[name="questionSingle"]:checked');
+    const explanationElement = document.getElementById('explanation-single');
+    
+    if (!selected) { 
+        alert('Please select an answer!'); 
+        return; 
     }
     
-    const question = quizState.selectedQuestions[quizState.currentQuestionIndex];
-    const userAnswer = selectedOption.value;
-    const isCorrect = userAnswer === question.answer;
-    
-    quizState.userAnswers.push({
-        question: question.question,
-        userAnswer,
-        correctAnswer: question.answer,
-        isCorrect,
-        explanation: question.explanation
+    const userAnswer = selected.value;
+    const isCorrect = userAnswer.replace(/\s+/g, '') === q.answer.replace(/\s+/g, '');
+    userAnswers.push({ 
+        question: q.question, 
+        userAnswer, 
+        correctAnswer: q.answer, 
+        isCorrect, 
+        explanation: q.explanation 
     });
     
-    if (isCorrect) {
-        quizState.score++;
-        document.getElementById('question-single').classList.add('correct');
-    } else {
-        document.getElementById('question-single').classList.add('incorrect');
+    if (isCorrect) { 
+        document.getElementById('question-single').classList.add('correct'); 
+        score++; 
+    } else { 
+        document.getElementById('question-single').classList.add('incorrect'); 
     }
     
-    document.getElementById('explanation-single').classList.add('show');
-    document.querySelectorAll('input[name="question-single"]').forEach(input => {
-        input.disabled = true;
-    });
+    explanationElement.style.display = 'block';
+    document.querySelectorAll('input[name="questionSingle"]').forEach(inp => inp.disabled = true);
     
-    const submitButton = document.getElementById('submit-single');
-    if (quizState.currentQuestionIndex < quizState.selectedQuestions.length - 1) {
-        submitButton.textContent = 'Next Question →';
-        submitButton.onclick = () => {
-            quizState.currentQuestionIndex++;
-            updateProgress();
-            renderQuestions();
+    const submitBtn = document.getElementById('submit-single');
+    if (currentQuestionIndex < selectedQuestions.length - 1) {
+        submitBtn.textContent = 'Next Question';
+        submitBtn.onclick = () => { 
+            currentQuestionIndex++; 
+            showSingleQuestion(); 
         };
     } else {
-        submitButton.textContent = 'View Results';
-        submitButton.onclick = showResults;
+        submitBtn.textContent = 'View Results';
+        submitBtn.onclick = showResults;
     }
 }
 
+// --- Submit/Restart ---
+submitQuizButton.onclick = checkAnswers;
+restartQuizButton.onclick = resetQuiz;
+finalRestartButton.onclick = resetQuiz;
+
+// --- Check Answers (all-at-once mode) ---
 function checkAnswers() {
-    let allAnswered = true;
-    quizState.userAnswers = [];
-    quizState.score = 0;
+    let answeredAll = true;
+    userAnswers = [];
+    score = 0;
     
-    quizState.selectedQuestions.forEach((question, index) => {
-        const selectedOption = document.querySelector(`input[name="question-${index}"]:checked`);
-        const questionElement = document.getElementById(`question-${index}`);
-        const explanationElement = document.getElementById(`explanation-${index}`);
+    selectedQuestions.forEach((q, idx) => {
+        const sel = document.querySelector(`input[name="question${idx}"]:checked`);
+        const questionDiv = document.getElementById(`question-${idx}`);
+        const explanationDiv = document.getElementById(`explanation-${idx}`);
+        let userAnswer = '';
+        let isCorrect = false;
         
-        if (!selectedOption) {
-            allAnswered = false;
-            questionElement.style.borderLeft = "4px solid var(--warning)";
-            explanationElement.classList.add('show');
+        if (!sel) {
+            answeredAll = false;
+            questionDiv.style.border = "2px solid #ffcc00";
+            explanationDiv.style.display = 'block';
         } else {
-            const userAnswer = selectedOption.value;
-            const isCorrect = userAnswer === question.answer;
-            
-            if (isCorrect) {
-                quizState.score++;
-                questionElement.classList.add('correct');
-            } else {
-                questionElement.classList.add('incorrect');
+            userAnswer = sel.value;
+            isCorrect = userAnswer.replace(/\s+/g, '') === q.answer.replace(/\s+/g, '');
+            if (isCorrect) { 
+                score++; 
+                questionDiv.classList.add('correct'); 
+            } else { 
+                questionDiv.classList.add('incorrect'); 
             }
-            
-            explanationElement.classList.add('show');
+            explanationDiv.style.display = 'block';
         }
         
-        quizState.userAnswers.push({
-            question: question.question,
-            userAnswer: selectedOption ? selectedOption.value : "No answer selected",
-            correctAnswer: question.answer,
-            isCorrect: selectedOption ? selectedOption.value === question.answer : false,
-            explanation: question.explanation
+        userAnswers.push({ 
+            question: q.question, 
+            userAnswer: userAnswer || '<em>No answer</em>', 
+            correctAnswer: q.answer, 
+            isCorrect, 
+            explanation: q.explanation 
         });
     });
     
-    if (!allAnswered) {
-        alert('Please answer all questions before submitting!');
-        return;
+    if (!answeredAll) { 
+        alert('Please answer all questions before submitting!'); 
+        return; 
     }
     
     showResults();
 }
 
+// --- Show Results ---
 function showResults() {
-    showScreen('results');
-    containers.finalScore.textContent = `You scored ${quizState.score} out of ${quizState.selectedQuestions.length}`;
+    quizScreen.classList.remove('active-screen');
+    resultsScreen.classList.add('active-screen');
     
-    let resultsHTML = '';
-    quizState.userAnswers.forEach((answer, index) => {
-        resultsHTML += `
-            <div class="question ${answer.isCorrect ? 'correct' : 'incorrect'}">
-                <p><strong>Q${index + 1}: ${answer.question}</strong></p>
-                <p>Your answer: <span class="user-answer">${answer.userAnswer}</span> ${answer.isCorrect ? '✓' : '✗'}</p>
-                ${!answer.isCorrect ? `<p>Correct answer: <span class="correct-answer">${answer.correctAnswer}</span></p>` : ''}
-                <p class="explanation show">${answer.explanation}</p>
+    const percentage = Math.round((score / selectedQuestions.length) * 100);
+    let message = '';
+    if (percentage >= 80) message = "Excellent!";
+    else if (percentage >= 60) message = "Good job!";
+    else if (percentage >= 40) message = "Not bad!";
+    else message = "Keep practicing!";
+    
+    finalScoreContainer.innerHTML = `
+        <div>${message}</div>
+        <div>You scored ${score} out of ${selectedQuestions.length} (${percentage}%)</div>
+    `;
+    
+    let html = '';
+    userAnswers.forEach((ans, idx) => {
+        html += `
+            <div class="question ${ans.isCorrect ? 'correct' : 'incorrect'}">
+                <p><strong>Q${idx+1}: ${ans.question}</strong></p>
+                <p>Your answer: ${ans.userAnswer} ${ans.isCorrect ? '✓' : '✗'}</p>
+                ${!ans.isCorrect ? `<p>Correct answer: ${ans.correctAnswer}</p>` : ''}
+                <p class="explanation show">Explanation: ${ans.explanation}</p>
             </div>
         `;
     });
+    resultsContainer.innerHTML = html;
     
-    containers.results.innerHTML = resultsHTML;
+    // Scroll to top of results
+    resultsContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 
+// --- Reset ---
 function resetQuiz() {
-    quizState = {
-        selectedThemeKey: null,
-        selectedQuestions: [],
-        quizMode: 'all',
-        currentQuestionIndex: 0,
-        userAnswers: [],
-        score: 0
-    };
+    currentQuestionIndex = 0;
+    userAnswers = [];
+    themeScreen.classList.add('active-screen');
+    lengthScreen.classList.remove('active-screen');
+    quizScreen.classList.remove('active-screen');
+    resultsScreen.classList.remove('active-screen');
+    resultsContainer.innerHTML = '';
+    finalScoreContainer.textContent = '';
     
-    showScreen('theme');
-    containers.results.innerHTML = '';
-    containers.finalScore.textContent = '';
+    // Reset all selections
+    document.querySelectorAll('.selection-option').forEach(opt => opt.classList.remove('selected'));
+    document.querySelectorAll('input[type="radio"]').forEach(radio => radio.checked = false);
 }
-
-// --- Initialize the quiz ---
-initializeThemeOptions();
 </script>
 </body>
 </html>
