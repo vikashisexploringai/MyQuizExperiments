@@ -2,92 +2,246 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interactive Quiz</title>
+    <title>Quiz Page</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        .question {
-            margin-bottom: 20px;
-            padding: 15px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-        }
-        button {
-            padding: 10px 15px;
-            background: #4CAF50;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-        #result {
-            margin-top: 20px;
-            font-weight: bold;
-        }
+        body { font-family: Arial, sans-serif; margin: 40px; background: #f9f9f9; }
+        .quiz-container { max-width: 800px; margin: auto; background: #fff; padding: 24px; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);}
+        .hidden { display: none; }
+        .question { padding: 16px; border-radius: 8px; margin-bottom: 18px; border: 2px solid #eee; }
+        .question.correct { border-color: #4caf50; background: #e8f5e9; }
+        .question.wrong { border-color: #f44336; background: #ffebee; }
+        .choices label { display: block; margin-bottom: 6px; cursor: pointer; }
+        .explanation { margin-top: 10px; font-size: 0.96em; color: #555; padding: 8px; background: #f0f0f0; border-left: 4px solid #2196f3; border-radius: 0 8px 8px 0;}
+        .btn { padding: 10px 22px; margin: 8px 4px 0 0; border: none; border-radius: 6px; background: #2196f3; color: #fff; cursor: pointer; font-size: 1em; }
+        .btn:disabled { background: #c5c5c5; cursor: not-allowed; }
+        .quiz-options { margin-bottom: 18px; }
+        .theme-list { margin-bottom: 18px; }
     </style>
 </head>
 <body>
-    <h1>General Knowledge Quiz</h1>
-    <div id="quiz-container"></div>
-    <button id="submit-btn">Submit Answers</button>
-    <div id="result"></div>
+<div class="quiz-container">
+    <h2>Quiz</h2>
+    <div id="themeSelection" class="theme-list">
+        <label for="theme">Choose a theme:</label>
+        <select id="theme">
+            <option value="" disabled selected>Select theme</option>
+            <!-- Dynamically fill options -->
+            <!-- Example: <option value="math">Math</option> -->
+        </select>
+    </div>
+    <div id="quizOptions" class="quiz-options hidden">
+        <label>Number of Questions:
+            <select id="numQuestions">
+                <option value="10">10</option>
+                <option value="20">20</option>
+                <option value="30">30</option>
+                <option value="all">Complete Set</option>
+            </select>
+        </label>
+        <br>
+        <label>Quiz Mode:</label>
+        <label><input type="radio" name="mode" value="onebyone" checked> One by One</label>
+        <label><input type="radio" name="mode" value="all"> All on Same Page</label>
+        <br>
+        <button id="startQuizBtn" class="btn">Start Quiz</button>
+    </div>
+    <form id="quizForm" class="hidden">
+        <div id="questionsContainer"></div>
+        <button id="submitQuizBtn" class="btn" type="submit">Submit</button>
+    </form>
+    <div id="result" class="hidden"></div>
+</div>
+<script>
+// --- Config ---
+// List your available quiz JSON files and themes here:
+const THEMES = [
+    { name: "Math", file: "themes/math.json" },
+    { name: "Science", file: "themes/science.json" },
+    { name: "History", file: "themes/history.json" }
+];
 
-    <script>
-        // Fetch and display questions
-        fetch('questions.json')
-            .then(response => response.json())
-            .then(questions => {
-                renderQuiz(questions);
-                
-                document.getElementById('submit-btn').addEventListener('click', () => {
-                    calculateScore(questions);
-                });
-            })
-            .catch(error => console.error('Error loading questions:', error));
+// --- UI Elements ---
+const themeSelect = document.getElementById('theme');
+const quizOptions = document.getElementById('quizOptions');
+const startQuizBtn = document.getElementById('startQuizBtn');
+const quizForm = document.getElementById('quizForm');
+const questionsContainer = document.getElementById('questionsContainer');
+const resultDiv = document.getElementById('result');
+const numQuestionsSelect = document.getElementById('numQuestions');
 
-        function renderQuiz(questions) {
-            const container = document.getElementById('quiz-container');
-            
-            questions.forEach((q, index) => {
-                container.innerHTML += `
-                    <div class="question" id="q${index}">
-                        <h3>${index + 1}. ${q.question}</h3>
-                        ${q.options.map((opt, optIndex) => `
-                            <div>
-                                <input type="radio" 
-                                       id="q${index}-opt${optIndex}" 
-                                       name="q${index}" 
-                                       value="${opt}">
-                                <label for="q${index}-opt${optIndex}">${opt}</label>
-                            </div>
-                        `).join('')}
-                    </div>
-                `;
-            });
-        }
+// --- State ---
+let questions = [];
+let quizMode = 'onebyone';
+let currentQuestionIndex = 0;
+let userAnswers = [];
+let quizStarted = false;
 
-        function calculateScore(questions) {
-            let score = 0;
-            
-            questions.forEach((q, index) => {
-                const selectedOption = document.querySelector(`input[name="q${index}"]:checked`);
-                
-                if (selectedOption && selectedOption.value === q.answer) {
-                    score++;
-                    document.getElementById(`q${index}`).style.backgroundColor = '#e6ffe6';
-                } else {
-                    document.getElementById(`q${index}`).style.backgroundColor = '#ffe6e6';
-                }
-            });
-            
-            document.getElementById('result').innerHTML = 
-                `Your score: ${score}/${questions.length}`;
-        }
-    </script>
+// --- Populate theme selector ---
+function populateThemes() {
+    THEMES.forEach(theme => {
+        const opt = document.createElement('option');
+        opt.value = theme.file;
+        opt.textContent = theme.name;
+        themeSelect.appendChild(opt);
+    });
+}
+populateThemes();
+
+// --- Theme selection handler ---
+themeSelect.addEventListener('change', () => {
+    quizOptions.classList.remove('hidden');
+    quizForm.classList.add('hidden');
+    resultDiv.classList.add('hidden');
+    // Reset state
+    questions = [];
+    userAnswers = [];
+    quizStarted = false;
+});
+
+// --- Quiz Mode handler ---
+quizOptions.addEventListener('change', (e) => {
+    if (e.target.name === "mode") {
+        quizMode = e.target.value;
+    }
+});
+
+// --- Start Quiz handler ---
+startQuizBtn.addEventListener('click', async () => {
+    const themeFile = themeSelect.value;
+    if (!themeFile) return;
+    // Load questions from json file
+    questions = await fetch(themeFile).then(res => res.json());
+    // Shuffle and slice questions
+    let count = numQuestionsSelect.value === "all" ? questions.length : parseInt(numQuestionsSelect.value);
+    questions = shuffle(questions).slice(0, count);
+    userAnswers = new Array(questions.length).fill(null);
+    quizStarted = true;
+    resultDiv.classList.add('hidden');
+    if (quizMode === "all") {
+        renderAllQuestions();
+    } else {
+        renderOneByOne();
+    }
+    quizForm.classList.remove('hidden');
+});
+
+// --- Shuffle Utility ---
+function shuffle(array) {
+    return array.map(value => ({ value, sort: Math.random() }))
+                .sort((a, b) => a.sort - b.sort)
+                .map(({ value }) => value);
+}
+
+// --- Render All Questions ---
+function renderAllQuestions(showAnswers = false) {
+    questionsContainer.innerHTML = '';
+    questions.forEach((q, idx) => {
+        const questionDiv = document.createElement('div');
+        questionDiv.className = 'question' + (showAnswers ? (userAnswers[idx] === q.answer ? ' correct' : ' wrong') : '');
+        questionDiv.innerHTML = `
+            <div><b>Q${idx+1}:</b> ${q.question}</div>
+            <div class="choices">
+                ${q.choices.map((choice, cidx) => `
+                    <label>
+                        <input type="radio" name="q${idx}" value="${choice}" ${userAnswers[idx] === choice ? "checked" : ""} ${showAnswers ? "disabled" : ""}>
+                        ${choice}
+                    </label>
+                `).join('')}
+            </div>
+            <div class="explanation" style="display:${showAnswers ? "block" : "none"};">
+                <b>Explanation:</b> ${q.explanation}
+            </div>
+        `;
+        questionsContainer.appendChild(questionDiv);
+    });
+}
+
+// --- Render One By One ---
+function renderOneByOne(showAnswer = false) {
+    questionsContainer.innerHTML = '';
+    const q = questions[currentQuestionIndex];
+    const questionDiv = document.createElement('div');
+    questionDiv.className = 'question' + (showAnswer ? (userAnswers[currentQuestionIndex] === q.answer ? ' correct' : ' wrong') : '');
+    questionDiv.innerHTML = `
+        <div><b>Q${currentQuestionIndex+1}:</b> ${q.question}</div>
+        <div class="choices">
+            ${q.choices.map((choice, cidx) => `
+                <label>
+                    <input type="radio" name="q${currentQuestionIndex}" value="${choice}" ${userAnswers[currentQuestionIndex] === choice ? "checked" : ""} ${showAnswer ? "disabled" : ""}>
+                    ${choice}
+                </label>
+            `).join('')}
+        </div>
+        <div class="explanation" style="display:${showAnswer ? "block" : "none"};">
+            <b>Explanation:</b> ${q.explanation}
+        </div>
+    `;
+    questionsContainer.appendChild(questionDiv);
+
+    // Prev/Next buttons
+    const navDiv = document.createElement('div');
+    if (currentQuestionIndex > 0)
+        navDiv.innerHTML += `<button type="button" class="btn" id="prevBtn">Prev</button>`;
+    if (currentQuestionIndex < questions.length - 1)
+        navDiv.innerHTML += `<button type="button" class="btn" id="nextBtn">Next</button>`;
+    questionsContainer.appendChild(navDiv);
+
+    document.getElementById('quizForm').onsubmit = handleSubmit;
+
+    // Navigation handlers
+    if (document.getElementById('prevBtn')) {
+        document.getElementById('prevBtn').onclick = () => {
+            saveCurrentAnswer();
+            currentQuestionIndex--;
+            renderOneByOne();
+        };
+    }
+    if (document.getElementById('nextBtn')) {
+        document.getElementById('nextBtn').onclick = () => {
+            saveCurrentAnswer();
+            currentQuestionIndex++;
+            renderOneByOne();
+        };
+    }
+}
+
+// --- Save current answer (for onebyone mode) ---
+function saveCurrentAnswer() {
+    const radios = document.querySelectorAll(`input[name="q${currentQuestionIndex}"]`);
+    radios.forEach(radio => {
+        if (radio.checked) userAnswers[currentQuestionIndex] = radio.value;
+    });
+}
+
+// --- Handle Quiz Submission ---
+quizForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+    if (quizMode === "all") {
+        // Save answers
+        questions.forEach((q, idx) => {
+            const selected = document.querySelector(`input[name="q${idx}"]:checked`);
+            userAnswers[idx] = selected ? selected.value : null;
+        });
+        renderAllQuestions(true);
+    } else {
+        saveCurrentAnswer();
+        renderOneByOne(true);
+    }
+    // Show explanations and highlight answers
+    showResult();
+});
+
+// --- Show result ---
+function showResult() {
+    let correct = 0;
+    questions.forEach((q, idx) => {
+        if (userAnswers[idx] === q.answer) correct++;
+    });
+    resultDiv.innerHTML = `<h3>Result: ${correct}/${questions.length} correct</h3>`;
+    resultDiv.classList.remove('hidden');
+}
+
+
+</script>
 </body>
 </html>
