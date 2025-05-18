@@ -1,182 +1,182 @@
 [
-    {
-        question: "When did Operation Polo take place?",
-        options: ["September 1947", "September 1948", "August 1947", "October 1948"],
-        answer: "September 1948",
-        explanation: "Operation Polo was the military operation in which the Indian Armed Forces annexed the princely state of Hyderabad in September 1948."
-    },
-    {
-        question: "In which year was the RBI nationalized?",
-        options: ["1947", "1948", "1949", "1950"],
-        answer: "1949",
-        explanation: "The Reserve Bank of India was nationalized on January 1, 1949, becoming fully owned by the Government of India."
-    },
-    {
-        question: "When was NATO formed?",
-        options: ["1947", "1948", "1949", "1950"],
-        answer: "1949",
-        explanation: "The North Atlantic Treaty Organization (NATO) was established on April 4, 1949, with the signing of the North Atlantic Treaty."
-    },
-    {
-        question: "When did India's first general elections take place?",
-        options: ["October 1950-February 1951", "October 1951-February 1952", "October 1952-February 1953", "October 1949-February 1950"],
-        answer: "October 1951-February 1952",
-        explanation: "India's first general elections were held from October 25, 1951 to February 21, 1952, marking India as the first country to hold universal adult franchise after independence."
-    },
-    {
-        question: "When was the Bharatiya Jana Sangh (BJS) formed?",
-        options: ["October 1949", "October 1950", "October 1951", "October 1952"],
-        answer: "October 1951",
-        explanation: "The Bharatiya Jana Sangh was formed in October 1951 by Syama Prasad Mukherjee, Deendayal Upadhyaya and Balraj Madhok."
-    },
-    {
-        question: "When was India's first Five-Year Plan implemented?",
-        options: ["1947-1952", "1951-1956", "1956-1961", "1961-1966"],
-        answer: "1951-1956",
-        explanation: "India's first Five-Year Plan was implemented from 1951 to 1956, focusing primarily on agriculture and irrigation projects."
-    },
-    {
-        question: "When were Indian airlines nationalized into Indian Airlines and Air India International?",
-        options: ["1951", "1953", "1955", "1957"],
-        answer: "1953",
-        explanation: "In 1953, the Indian government nationalized airlines, creating Indian Airlines for domestic routes and Air India International for international routes."
-    },
-    {
-        question: "When was Andhra State formed with Kurnool as its capital?",
-        options: ["1 October 1953", "1 November 1953", "1 October 1956", "1 November 1956"],
-        answer: "1 October 1953",
-        explanation: "Andhra State was formed on 1 October 1953, consisting of 11 districts of Coastal Andhra and Rayalaseema with Kurnool as its capital."
-    },
-    {
-        question: "When was the de facto Merger Day of French settlements in India?",
-        options: ["1 November 1954", "1 November 1956", "1 May 1960", "19 December 1961"],
-        answer: "1 November 1954",
-        explanation: "The de facto Merger Day was on 1 November 1954 when the treaty of cession was signed (later ratified in 1962), integrating French settlements into India."
-    },
-    {
-        question: "When was the Bandung Conference held?",
-        options: ["1953", "1955", "1957", "1959"],
-        answer: "1955",
-        explanation: "The Bandung Conference, a meeting of Asian and African states, was held in 1955, marking a significant step toward the Non-Aligned Movement."
-    },
-    {
-        question: "When was the Warsaw Pact formed?",
-        options: ["1953", "1955", "1957", "1959"],
-        answer: "1955",
-        explanation: "The Warsaw Pact, a collective defense treaty among Soviet Union and seven other Soviet satellite states, was formed in 1955 as a counterbalance to NATO."
-    },
-    {
-        question: "When was the Imperial Bank nationalized into State Bank of India?",
-        options: ["1953", "1955", "1957", "1959"],
-        answer: "1955",
-        explanation: "The Imperial Bank of India was nationalized in 1955 and renamed as State Bank of India."
-    },
-    {
-        question: "When were insurance companies nationalized into LIC?",
-        options: ["1953", "1955", "1956", "1958"],
-        answer: "1956",
-        explanation: "In 1956, the Indian government nationalized insurance companies and formed the Life Insurance Corporation of India (LIC)."
-    },
-    {
-        question: "When was Kerala state formed?",
-        options: ["1 October 1953", "1 November 1956", "1 May 1960", "1 November 1966"],
-        answer: "1 November 1956",
-        explanation: "Kerala was formed on 1 November 1956 by merging Travancore-Cochin state with Malabar district of Madras and Kasaragod taluk of Mysore."
-    },
-    {
-        question: "When was Mysore state formed (later renamed Karnataka)?",
-        options: ["1 October 1953", "1 November 1956", "1 May 1960", "1 November 1966"],
-        answer: "1 November 1956",
-        explanation: "Mysore state was formed on 1 November 1956 by merging Mysore with parts of Madras, Bombay and Hyderabad. It was renamed Karnataka in 1973."
-    },
-    {
-        question: "When was Andhra Pradesh formed by merging Andhra State with Telugu-speaking areas of Hyderabad State?",
-        options: ["1 October 1953", "1 November 1956", "1 May 1960", "1 November 1966"],
-        answer: "1 November 1956",
-        explanation: "Andhra Pradesh was formed on 1 November 1956 by merging Andhra State with Telugu-speaking areas of Hyderabad State."
-    },
-    {
-        question: "When was the first Communist government elected in Kerala?",
-        options: ["1955", "1957", "1959", "1961"],
-        answer: "1957",
-        explanation: "In 1957, the first Communist government in India was elected in Kerala under E.M.S. Namboodiripad."
-    },
-    {
-        question: "When was Nagaland separated from Assam (before becoming a full state in 1963)?",
-        options: ["1955", "1957", "1959", "1961"],
-        answer: "1957",
-        explanation: "Nagaland was separated from Assam in 1957 and became a full-fledged state of India in 1963."
-    },
-    {
-        question: "When was Bombay state divided into Maharashtra and Gujarat?",
-        options: ["1 May 1956", "1 May 1958", "1 May 1960", "1 May 1962"],
-        answer: "1 May 1960",
-        explanation: "Bombay state was divided into Maharashtra and Gujarat on 1 May 1960 as part of the States Reorganization Act."
-    },
-    {
-        question: "When was Goa liberated through Operation Vijay?",
-        options: ["19 December 1960", "19 December 1961", "19 December 1962", "19 December 1963"],
-        answer: "19 December 1961",
-        explanation: "Goa was liberated from Portuguese rule on 19 December 1961 through Operation Vijay, becoming a full-fledged state in 1987."
-    },
-    {
-        question: "When were Haryana and Punjab created by splitting East Punjab?",
-        options: ["1 November 1956", "1 November 1960", "1 November 1966", "1 November 1970"],
-        answer: "1 November 1966",
-        explanation: "Haryana and Punjab were created on 1 November 1966 by splitting the province of East Punjab."
-    },
-    {
-        question: "When were 14 private banks with deposits >50 Cr nationalized?",
-        options: ["1967", "1969", "1971", "1973"],
-        answer: "1969",
-        explanation: "In 1969, the Indian government nationalized 14 major private banks that had deposits greater than 50 Crores."
-    },
-    {
-        question: "When were Meghalaya, Manipur, Tripura and Mizoram (as UT) created after reorganizing Northeast India?",
-        options: ["21 January 1970", "21 January 1971", "21 January 1972", "21 January 1973"],
-        answer: "21 January 1972",
-        explanation: "On 21 January 1972, Meghalaya, Manipur, Tripura and Mizoram (as Union Territory) were created after reorganizing Northeast India following the Indo-Pak War to ensure effective control."
-    },
-    {
-        question: "When was the General Insurance Corporation (GIC) Act passed to nationalize general insurance companies?",
-        options: ["1970", "1972", "1974", "1976"],
-        answer: "1972",
-        explanation: "The GIC Act was passed in 1972 to nationalize general insurance companies in India."
-    },
-    {
-        question: "When did Sikkim merge with India?",
-        options: ["16 May 1973", "16 May 1974", "16 May 1975", "16 May 1976"],
-        answer: "16 May 1975",
-        explanation: "Sikkim officially merged with India on 16 May 1975, becoming the 22nd state of India."
-    },
-    {
-        question: "When was the Emergency declared by President Fakhruddin Ali Ahmed?",
-        options: ["25 June 1973", "25 June 1974", "25 June 1975", "25 June 1976"],
-        answer: "25 June 1975",
-        explanation: "The Emergency was declared by President Fakhruddin Ali Ahmed on 25 June 1975 on the advice of Prime Minister Indira Gandhi, lasting until 21 March 1977."
-    },
-    {
-        question: "When did Indira Gandhi return to power after the Emergency?",
-        options: ["January 1978", "January 1979", "January 1980", "January 1981"],
-        answer: "January 1980",
-        explanation: "Indira Gandhi returned to power in January 1980 after the Janata Party government collapsed."
-    },
-    {
-        question: "When were 6 more banks with deposits >200 Cr nationalized?",
-        options: ["April 1978", "April 1979", "April 1980", "April 1981"],
-        answer: "April 1980",
-        explanation: "In April 1980, the Indian government nationalized 6 more private banks that had deposits greater than 200 Crores."
-    },
-    {
-        question: "When was the Bharatiya Janata Party (BJP) formed by former BJS members?",
-        options: ["April 1978", "April 1979", "April 1980", "April 1981"],
-        answer: "April 1980",
-        explanation: "The BJP was formed in April 1980 by former members of the Bharatiya Jana Sangh after the defeat of the Janata Party."
-    },
-    {
-        question: "When did the USSR officially cease to exist?",
-        options: ["26 December 1989", "26 December 1990", "26 December 1991", "26 December 1992"],
-        answer: "26 December 1991",
-        explanation: "The Union of Soviet Socialist Republics (USSR) officially ceased to exist on 26 December 1991, marking the end of the Cold War era."
-    }
+  {
+    "question": "When did Operation Polo take place?",
+    "choices": ["September 1947", "September 1948", "August 1947", "October 1948"],
+    "answer": "September 1948",
+    "explanation": "Operation Polo was the military operation in which the Indian Armed Forces annexed the princely state of Hyderabad in September 1948."
+  },
+  {
+    "question": "In which year was the RBI nationalized?",
+    "choices": ["1947", "1948", "1949", "1950"],
+    "answer": "1949",
+    "explanation": "The Reserve Bank of India was nationalized on January 1, 1949, becoming fully owned by the Government of India."
+  },
+  {
+    "question": "When was NATO formed?",
+    "choices": ["1947", "1948", "1949", "1950"],
+    "answer": "1949",
+    "explanation": "The North Atlantic Treaty Organization (NATO) was established on April 4, 1949, with the signing of the North Atlantic Treaty."
+  },
+  {
+    "question": "When did India's first general elections take place?",
+    "choices": ["October 1950-February 1951", "October 1951-February 1952", "October 1952-February 1953", "October 1949-February 1950"],
+    "answer": "October 1951-February 1952",
+    "explanation": "India's first general elections were held from October 25, 1951 to February 21, 1952, marking India as the first country to hold universal adult franchise after independence."
+  },
+  {
+    "question": "When was the Bharatiya Jana Sangh (BJS) formed?",
+    "choices": ["October 1949", "October 1950", "October 1951", "October 1952"],
+    "answer": "October 1951",
+    "explanation": "The Bharatiya Jana Sangh was formed in October 1951 by Syama Prasad Mukherjee, Deendayal Upadhyaya and Balraj Madhok."
+  },
+  {
+    "question": "When was India's first Five-Year Plan implemented?",
+    "choices": ["1947-1952", "1951-1956", "1956-1961", "1961-1966"],
+    "answer": "1951-1956",
+    "explanation": "India's first Five-Year Plan was implemented from 1951 to 1956, focusing primarily on agriculture and irrigation projects."
+  },
+  {
+    "question": "When were Indian airlines nationalized into Indian Airlines and Air India International?",
+    "choices": ["1951", "1953", "1955", "1957"],
+    "answer": "1953",
+    "explanation": "In 1953, the Indian government nationalized airlines, creating Indian Airlines for domestic routes and Air India International for international routes."
+  },
+  {
+    "question": "When was Andhra State formed with Kurnool as its capital?",
+    "choices": ["1 October 1953", "1 November 1953", "1 October 1956", "1 November 1956"],
+    "answer": "1 October 1953",
+    "explanation": "Andhra State was formed on 1 October 1953, consisting of 11 districts of Coastal Andhra and Rayalaseema with Kurnool as its capital."
+  },
+  {
+    "question": "When was the de facto Merger Day of French settlements in India?",
+    "choices": ["1 November 1954", "1 November 1956", "1 May 1960", "19 December 1961"],
+    "answer": "1 November 1954",
+    "explanation": "The de facto Merger Day was on 1 November 1954 when the treaty of cession was signed (later ratified in 1962), integrating French settlements into India."
+  },
+  {
+    "question": "When was the Bandung Conference held?",
+    "choices": ["1953", "1955", "1957", "1959"],
+    "answer": "1955",
+    "explanation": "The Bandung Conference, a meeting of Asian and African states, was held in 1955, marking a significant step toward the Non-Aligned Movement."
+  },
+  {
+    "question": "When was the Warsaw Pact formed?",
+    "choices": ["1953", "1955", "1957", "1959"],
+    "answer": "1955",
+    "explanation": "The Warsaw Pact, a collective defense treaty among Soviet Union and seven other Soviet satellite states, was formed in 1955 as a counterbalance to NATO."
+  },
+  {
+    "question": "When was the Imperial Bank nationalized into State Bank of India?",
+    "choices": ["1953", "1955", "1957", "1959"],
+    "answer": "1955",
+    "explanation": "The Imperial Bank of India was nationalized in 1955 and renamed as State Bank of India."
+  },
+  {
+    "question": "When were insurance companies nationalized into LIC?",
+    "choices": ["1953", "1955", "1956", "1958"],
+    "answer": "1956",
+    "explanation": "In 1956, the Indian government nationalized insurance companies and formed the Life Insurance Corporation of India (LIC)."
+  },
+  {
+    "question": "When was Kerala state formed?",
+    "choices": ["1 October 1953", "1 November 1956", "1 May 1960", "1 November 1966"],
+    "answer": "1 November 1956",
+    "explanation": "Kerala was formed on 1 November 1956 by merging Travancore-Cochin state with Malabar district of Madras and Kasaragod taluk of Mysore."
+  },
+  {
+    "question": "When was Mysore state formed (later renamed Karnataka)?",
+    "choices": ["1 October 1953", "1 November 1956", "1 May 1960", "1 November 1966"],
+    "answer": "1 November 1956",
+    "explanation": "Mysore state was formed on 1 November 1956 by merging Mysore with parts of Madras, Bombay and Hyderabad. It was renamed Karnataka in 1973."
+  },
+  {
+    "question": "When was Andhra Pradesh formed by merging Andhra State with Telugu-speaking areas of Hyderabad State?",
+    "choices": ["1 October 1953", "1 November 1956", "1 May 1960", "1 November 1966"],
+    "answer": "1 November 1956",
+    "explanation": "Andhra Pradesh was formed on 1 November 1956 by merging Andhra State with Telugu-speaking areas of Hyderabad State."
+  },
+  {
+    "question": "When was the first Communist government elected in Kerala?",
+    "choices": ["1955", "1957", "1959", "1961"],
+    "answer": "1957",
+    "explanation": "In 1957, the first Communist government in India was elected in Kerala under E.M.S. Namboodiripad."
+  },
+  {
+    "question": "When was Nagaland separated from Assam (before becoming a full state in 1963)?",
+    "choices": ["1955", "1957", "1959", "1961"],
+    "answer": "1957",
+    "explanation": "Nagaland was separated from Assam in 1957 and became a full-fledged state of India in 1963."
+  },
+  {
+    "question": "When was Bombay state divided into Maharashtra and Gujarat?",
+    "choices": ["1 May 1956", "1 May 1958", "1 May 1960", "1 May 1962"],
+    "answer": "1 May 1960",
+    "explanation": "Bombay state was divided into Maharashtra and Gujarat on 1 May 1960 as part of the States Reorganization Act."
+  },
+  {
+    "question": "When was Goa liberated through Operation Vijay?",
+    "choices": ["19 December 1960", "19 December 1961", "19 December 1962", "19 December 1963"],
+    "answer": "19 December 1961",
+    "explanation": "Goa was liberated from Portuguese rule on 19 December 1961 through Operation Vijay, becoming a full-fledged state in 1987."
+  },
+  {
+    "question": "When were Haryana and Punjab created by splitting East Punjab?",
+    "choices": ["1 November 1956", "1 November 1960", "1 November 1966", "1 November 1970"],
+    "answer": "1 November 1966",
+    "explanation": "Haryana and Punjab were created on 1 November 1966 by splitting the province of East Punjab."
+  },
+  {
+    "question": "When were 14 private banks with deposits >50 Cr nationalized?",
+    "choices": ["1967", "1969", "1971", "1973"],
+    "answer": "1969",
+    "explanation": "In 1969, the Indian government nationalized 14 major private banks that had deposits greater than 50 Crores."
+  },
+  {
+    "question": "When were Meghalaya, Manipur, Tripura and Mizoram (as UT) created after reorganizing Northeast India?",
+    "choices": ["21 January 1970", "21 January 1971", "21 January 1972", "21 January 1973"],
+    "answer": "21 January 1972",
+    "explanation": "On 21 January 1972, Meghalaya, Manipur, Tripura and Mizoram (as Union Territory) were created after reorganizing Northeast India following the Indo-Pak War to ensure effective control."
+  },
+  {
+    "question": "When was the General Insurance Corporation (GIC) Act passed to nationalize general insurance companies?",
+    "choices": ["1970", "1972", "1974", "1976"],
+    "answer": "1972",
+    "explanation": "The GIC Act was passed in 1972 to nationalize general insurance companies in India."
+  },
+  {
+    "question": "When did Sikkim merge with India?",
+    "choices": ["16 May 1973", "16 May 1974", "16 May 1975", "16 May 1976"],
+    "answer": "16 May 1975",
+    "explanation": "Sikkim officially merged with India on 16 May 1975, becoming the 22nd state of India."
+  },
+  {
+    "question": "When was the Emergency declared by President Fakhruddin Ali Ahmed?",
+    "choices": ["25 June 1973", "25 June 1974", "25 June 1975", "25 June 1976"],
+    "answer": "25 June 1975",
+    "explanation": "The Emergency was declared by President Fakhruddin Ali Ahmed on 25 June 1975 on the advice of Prime Minister Indira Gandhi, lasting until 21 March 1977."
+  },
+  {
+    "question": "When did Indira Gandhi return to power after the Emergency?",
+    "choices": ["January 1978", "January 1979", "January 1980", "January 1981"],
+    "answer": "January 1980",
+    "explanation": "Indira Gandhi returned to power in January 1980 after the Janata Party government collapsed."
+  },
+  {
+    "question": "When were 6 more banks with deposits >200 Cr nationalized?",
+    "choices": ["April 1978", "April 1979", "April 1980", "April 1981"],
+    "answer": "April 1980",
+    "explanation": "In April 1980, the Indian government nationalized 6 more private banks that had deposits greater than 200 Crores."
+  },
+  {
+    "question": "When was the Bharatiya Janata Party (BJP) formed by former BJS members?",
+    "choices": ["April 1978", "April 1979", "April 1980", "April 1981"],
+    "answer": "April 1980",
+    "explanation": "The BJP was formed in April 1980 by former members of the Bharatiya Jana Sangh after the defeat of the Janata Party."
+  },
+  {
+    "question": "When did the USSR officially cease to exist?",
+    "choices": ["26 December 1989", "26 December 1990", "26 December 1991", "26 December 1992"],
+    "answer": "26 December 1991",
+    "explanation": "The Union of Soviet Socialist Republics (USSR) officially ceased to exist on 26 December 1991, marking the end of the Cold War era."
+  }
 ]
