@@ -1,355 +1,355 @@
 [
   {
     "question": "When did the Battle of Waihind take place?",
-    "options": ["1006", "1008", "1010", "1012"],
+    "choices": ["1006", "1008", "1010", "1012"],
     "answer": "1008",
     "explanation": "The Battle of Waihind occurred in 1008 between Mahmud of Ghazni and the Hindu Shahi kingdom."
   },
   {
     "question": "In which year was the Battle of Mahoba fought?",
-    "options": ["1175", "1180", "1182", "1185"],
+    "choices": ["1175", "1180", "1182", "1185"],
     "answer": "1182",
     "explanation": "The Battle of Mahoba was fought in 1182 between the Chandelas and the Chauhans."
   },
   {
     "question": "When was the Battle of Chandawar?",
-    "options": ["1192", "1194", "1196", "1198"],
+    "choices": ["1192", "1194", "1196", "1198"],
     "answer": "1194",
     "explanation": "The Battle of Chandawar in 1194 was fought between Muhammad Ghori and Jaichandra of Kannauj."
   },
   {
     "question": "When did the Battle of Chaul occur?",
-    "options": ["1505", "1508", "1510", "1512"],
+    "choices": ["1505", "1508", "1510", "1512"],
     "answer": "1508",
     "explanation": "The naval Battle of Chaul took place in 1508 between the Portuguese and a Mamluk-Egyptian fleet."
   },
   {
     "question": "In which year was the Battle of Diu fought?",
-    "options": ["1507", "1509", "1511", "1513"],
+    "choices": ["1507", "1509", "1511", "1513"],
     "answer": "1509",
     "explanation": "The decisive Battle of Diu occurred in 1509, establishing Portuguese dominance in the Indian Ocean."
   },
   {
     "question": "When was the First Battle of Panipat?",
-    "options": ["1524", "1526", "1528", "1530"],
+    "choices": ["1524", "1526", "1528", "1530"],
     "answer": "1526",
     "explanation": "The First Battle of Panipat in 1526 marked the beginning of the Mughal Empire in India."
   },
   {
     "question": "When did the Battle of Khanwa take place?",
-    "options": ["1526", "1527", "1528", "1529"],
+    "choices": ["1526", "1527", "1528", "1529"],
     "answer": "1527",
     "explanation": "The Battle of Khanwa in 1527 was fought between Babur and Rana Sanga of Mewar."
   },
   {
     "question": "In which year was the Battle of Chanderi?",
-    "options": ["1526", "1527", "1528", "1529"],
+    "choices": ["1526", "1527", "1528", "1529"],
     "answer": "1528",
     "explanation": "The Battle of Chanderi in 1528 was another victory for Babur against Rajput forces."
   },
   {
     "question": "When was the Battle of Ghaghra fought?",
-    "options": ["1527", "1528", "1529", "1530"],
+    "choices": ["1527", "1528", "1529", "1530"],
     "answer": "1529",
     "explanation": "The Battle of Ghaghra in 1529 was Babur's final major battle, securing Mughal control over northern India."
   },
   {
     "question": "When did the Battle of Chausa occur?",
-    "options": ["1537", "1539", "1541", "1543"],
+    "choices": ["1537", "1539", "1541", "1543"],
     "answer": "1539",
     "explanation": "The Battle of Chausa in 1539 was a major victory for Sher Shah Suri over Humayun."
   },
   {
     "question": "In which year was the Battle of Sirhind?",
-    "options": ["1553", "1555", "1557", "1559"],
+    "choices": ["1553", "1555", "1557", "1559"],
     "answer": "1555",
     "explanation": "The Battle of Sirhind in 1555 marked Humayun's reconquest of Delhi from the Sur Empire."
   },
   {
     "question": "When was the Second Battle of Panipat?",
-    "options": ["1554", "1556", "1558", "1560"],
+    "choices": ["1554", "1556", "1558", "1560"],
     "answer": "1556",
     "explanation": "The Second Battle of Panipat in 1556 established Akbar's rule over the Mughal Empire."
   },
   {
     "question": "When did the Battle of Swally occur?",
-    "options": ["Nov 1610", "Nov 1612", "Nov 1614", "Nov 1616"],
+    "choices": ["Nov 1610", "Nov 1612", "Nov 1614", "Nov 1616"],
     "answer": "Nov 1612",
     "explanation": "The naval Battle of Swally in November 1612 marked the beginning of British influence in India."
   },
   {
     "question": "In which year was the Battle of Saraighat fought?",
-    "options": ["1669", "1671", "1673", "1675"],
+    "choices": ["1669", "1671", "1673", "1675"],
     "answer": "1671",
     "explanation": "The Battle of Saraighat in 1671 was a decisive Ahom victory over the Mughals on the Brahmaputra River."
   },
   {
     "question": "When was the First Carnatic War?",
-    "options": ["1744-46", "1746-48", "1748-50", "1750-52"],
+    "choices": ["1744-46", "1746-48", "1748-50", "1750-52"],
     "answer": "1746-48",
     "explanation": "The First Carnatic War (1746-48) was part of the War of Austrian Succession, fought between British and French East India Companies."
   },
   {
     "question": "When did the Second Carnatic War occur?",
-    "options": ["1747-51", "1749-54", "1751-56", "1753-58"],
+    "choices": ["1747-51", "1749-54", "1751-56", "1753-58"],
     "answer": "1749-54",
     "explanation": "The Second Carnatic War (1749-54) saw continued Anglo-French rivalry in India with local alliances."
   },
   {
     "question": "In which year was the Battle of Plassey fought?",
-    "options": ["1755", "1757", "1759", "1761"],
+    "choices": ["1755", "1757", "1759", "1761"],
     "answer": "1757",
     "explanation": "The Battle of Plassey in 1757 marked the beginning of British political control in India."
   },
   {
     "question": "When was the Battle of Chinsura/Bedera?",
-    "options": ["1757", "1759", "1761", "1763"],
+    "choices": ["1757", "1759", "1761", "1763"],
     "answer": "1759",
     "explanation": "The Battle of Chinsura/Bedera in 1759 was a British victory over the Dutch in Bengal."
   },
   {
     "question": "When did the Battle of Wandiwash occur?",
-    "options": ["1758", "1760", "1762", "1764"],
+    "choices": ["1758", "1760", "1762", "1764"],
     "answer": "1760",
     "explanation": "The Battle of Wandiwash in 1760 was a decisive British victory over the French in India."
   },
   {
     "question": "In which year was the Third Battle of Panipat?",
-    "options": ["1759", "1761", "1763", "1765"],
+    "choices": ["1759", "1761", "1763", "1765"],
     "answer": "1761",
     "explanation": "The Third Battle of Panipat in 1761 was fought between the Marathas and Ahmad Shah Durrani."
   },
   {
     "question": "When was the Third Carnatic War?",
-    "options": ["1752-56", "1756-63", "1758-65", "1760-67"],
+    "choices": ["1752-56", "1756-63", "1758-65", "1760-67"],
     "answer": "1756-63",
     "explanation": "The Third Carnatic War (1756-63) coincided with the Seven Years' War in Europe, ending French ambitions in India."
   },
   {
     "question": "When did the Battle of Buxar occur?",
-    "options": ["1762", "1764", "1766", "1768"],
+    "choices": ["1762", "1764", "1766", "1768"],
     "answer": "1764",
     "explanation": "The Battle of Buxar in 1764 consolidated British control over Bengal and Bihar."
   },
   {
     "question": "When was the First Anglo-Mysore War?",
-    "options": ["1765-67", "1767-69", "1769-71", "1771-73"],
+    "choices": ["1765-67", "1767-69", "1769-71", "1771-73"],
     "answer": "1767-69",
     "explanation": "The First Anglo-Mysore War (1767-69) ended with the Treaty of Madras between the British and Hyder Ali."
   },
   {
     "question": "When did the First Anglo-Maratha War occur?",
-    "options": ["1773-78", "1775-82", "1777-84", "1779-86"],
+    "choices": ["1773-78", "1775-82", "1777-84", "1779-86"],
     "answer": "1775-82",
     "explanation": "The First Anglo-Maratha War (1775-82) ended with the Treaty of Salbai, maintaining the status quo."
   },
   {
     "question": "When was the American War of Independence?",
-    "options": ["1773-79", "1775-83", "1777-85", "1779-87"],
+    "choices": ["1773-79", "1775-83", "1777-85", "1779-87"],
     "answer": "1775-83",
     "explanation": "The American War of Independence (1775-83) resulted in the independence of the United States from Britain."
   },
   {
     "question": "When did the Second Anglo-Mysore War occur?",
-    "options": ["1778-82", "1780-84", "1782-86", "1784-88"],
+    "choices": ["1778-82", "1780-84", "1782-86", "1784-88"],
     "answer": "1780-84",
     "explanation": "The Second Anglo-Mysore War (1780-84) ended with the Treaty of Mangalore between Tipu Sultan and the British."
   },
   {
     "question": "When was the Maratha-Mysore War?",
-    "options": ["1783-85", "1785-87", "1787-89", "1789-91"],
+    "choices": ["1783-85", "1785-87", "1787-89", "1789-91"],
     "answer": "1785-87",
     "explanation": "The Maratha-Mysore War (1785-87) resulted in territorial gains for the Marathas against Tipu Sultan."
   },
   {
     "question": "When did the Third Anglo-Mysore War occur?",
-    "options": ["1788-90", "1790-92", "1792-94", "1794-96"],
+    "choices": ["1788-90", "1790-92", "1792-94", "1794-96"],
     "answer": "1790-92",
     "explanation": "The Third Anglo-Mysore War (1790-92) ended with the Treaty of Seringapatam, reducing Mysore's power."
   },
   {
     "question": "When was the Fourth Anglo-Mysore War?",
-    "options": ["1796-97", "1798-99", "1800-01", "1802-03"],
+    "choices": ["1796-97", "1798-99", "1800-01", "1802-03"],
     "answer": "1798-99",
     "explanation": "The Fourth Anglo-Mysore War (1798-99) resulted in Tipu Sultan's death and British control over Mysore."
   },
   {
     "question": "When did the Second Anglo-Maratha War occur?",
-    "options": ["1801-03", "1803-05", "1805-07", "1807-09"],
+    "choices": ["1801-03", "1803-05", "1805-07", "1807-09"],
     "answer": "1803-05",
     "explanation": "The Second Anglo-Maratha War (1803-05) significantly weakened Maratha power in India."
   },
   {
     "question": "When was the Third Anglo-Maratha War?",
-    "options": ["1815-17", "1817-19", "1819-21", "1821-23"],
+    "choices": ["1815-17", "1817-19", "1819-21", "1821-23"],
     "answer": "1817-19",
     "explanation": "The Third Anglo-Maratha War (1817-19) ended Maratha attempts to regain power, establishing British supremacy."
   },
   {
     "question": "When did the Battle of Koregaon occur?",
-    "options": ["1 Jan 1816", "1 Jan 1818", "1 Jan 1820", "1 Jan 1822"],
+    "choices": ["1 Jan 1816", "1 Jan 1818", "1 Jan 1820", "1 Jan 1822"],
     "answer": "1 Jan 1818",
     "explanation": "The Battle of Koregaon on 1 January 1818 was a key engagement in the Third Anglo-Maratha War."
   },
   {
     "question": "When was the First Anglo-Burmese War?",
-    "options": ["1822-24", "1824-26", "1826-28", "1828-30"],
+    "choices": ["1822-24", "1824-26", "1826-28", "1828-30"],
     "answer": "1824-26",
     "explanation": "The First Anglo-Burmese War (1824-26) resulted in British gains in northeast India and coastal Burma."
   },
   {
     "question": "When did the First Anglo-Afghan War occur?",
-    "options": ["1837-39", "1839-42", "1841-43", "1843-45"],
+    "choices": ["1837-39", "1839-42", "1841-43", "1843-45"],
     "answer": "1839-42",
     "explanation": "The disastrous First Anglo-Afghan War (1839-42) ended with a complete British withdrawal from Afghanistan."
   },
   {
     "question": "When was the First Opium War?",
-    "options": ["1837-39", "1839-42", "1841-43", "1843-45"],
+    "choices": ["1837-39", "1839-42", "1841-43", "1843-45"],
     "answer": "1839-42",
     "explanation": "The First Opium War (1839-42) between Britain and China resulted in the Treaty of Nanking."
   },
   {
     "question": "When did the First Anglo-Sikh War occur?",
-    "options": ["1843-45", "1845-46", "1847-48", "1849-50"],
+    "choices": ["1843-45", "1845-46", "1847-48", "1849-50"],
     "answer": "1845-46",
     "explanation": "The First Anglo-Sikh War (1845-46) weakened Sikh power in Punjab."
   },
   {
     "question": "When was the Treaty of Lahore & Amritsar signed?",
-    "options": ["1844", "1846", "1848", "1850"],
+    "choices": ["1844", "1846", "1848", "1850"],
     "answer": "1846",
     "explanation": "The Treaty of Lahore & Amritsar in 1846 ended the First Anglo-Sikh War and established British influence in Punjab."
   },
   {
     "question": "When did the Second Anglo-Sikh War occur?",
-    "options": ["1846-47", "1848-49", "1850-51", "1852-53"],
+    "choices": ["1846-47", "1848-49", "1850-51", "1852-53"],
     "answer": "1848-49",
     "explanation": "The Second Anglo-Sikh War (1848-49) resulted in full British annexation of Punjab."
   },
   {
     "question": "When was the Second Anglo-Burmese War?",
-    "options": ["1850-51", "1852-53", "1854-55", "1856-57"],
+    "choices": ["1850-51", "1852-53", "1854-55", "1856-57"],
     "answer": "1852-53",
     "explanation": "The Second Anglo-Burmese War (1852-53) resulted in British annexation of Lower Burma."
   },
   {
     "question": "When was the Treaty of Kanagawa signed?",
-    "options": ["1852", "1854", "1856", "1858"],
+    "choices": ["1852", "1854", "1856", "1858"],
     "answer": "1854",
     "explanation": "The Treaty of Kanagawa in 1854 opened Japan to American trade, ending its isolation."
   },
   {
     "question": "When did the Second Opium/Arrow War occur?",
-    "options": ["1854-58", "1856-60", "1858-62", "1860-64"],
+    "choices": ["1854-58", "1856-60", "1858-62", "1860-64"],
     "answer": "1856-60",
     "explanation": "The Second Opium/Arrow War (1856-60) further opened China to Western trade and influence."
   },
   {
     "question": "When was the Second Anglo-Afghan War?",
-    "options": ["1876-78", "1878-80", "1880-82", "1882-84"],
+    "choices": ["1876-78", "1878-80", "1880-82", "1882-84"],
     "answer": "1878-80",
     "explanation": "The Second Anglo-Afghan War (1878-80) established British control over Afghan foreign policy."
   },
   {
     "question": "When did the Third Anglo-Burmese War occur?",
-    "options": ["1883", "1885", "1887", "1889"],
+    "choices": ["1883", "1885", "1887", "1889"],
     "answer": "1885",
     "explanation": "The Third Anglo-Burmese War in 1885 resulted in complete British annexation of Burma."
   },
   {
     "question": "When was the First Sino-Japanese War?",
-    "options": ["1892-93", "1894-95", "1896-97", "1898-99"],
+    "choices": ["1892-93", "1894-95", "1896-97", "1898-99"],
     "answer": "1894-95",
     "explanation": "The First Sino-Japanese War (1894-95) established Japan as a major regional power in East Asia."
   },
   {
     "question": "When was the Treaty of Shimonoseki signed?",
-    "options": ["1893", "1895", "1897", "1899"],
+    "choices": ["1893", "1895", "1897", "1899"],
     "answer": "1895",
     "explanation": "The Treaty of Shimonoseki in 1895 ended the First Sino-Japanese War, forcing China to cede Taiwan to Japan."
   },
   {
     "question": "When did the Third Anglo-Afghan War occur?",
-    "options": ["1917", "1919", "1921", "1923"],
+    "choices": ["1917", "1919", "1921", "1923"],
     "answer": "1919",
     "explanation": "The brief Third Anglo-Afghan War in 1919 resulted in Afghan independence in foreign affairs."
   },
   {
     "question": "When was the Spanish Civil War?",
-    "options": ["1934-37", "1936-39", "1938-41", "1940-43"],
+    "choices": ["1934-37", "1936-39", "1938-41", "1940-43"],
     "answer": "1936-39",
     "explanation": "The Spanish Civil War (1936-39) was a prelude to World War II, resulting in Franco's dictatorship."
   },
   {
     "question": "When was the Munich Agreement signed?",
-    "options": ["30 Sept 1937", "30 Sept 1938", "30 Sept 1939", "30 Sept 1940"],
+    "choices": ["30 Sept 1937", "30 Sept 1938", "30 Sept 1939", "30 Sept 1940"],
     "answer": "30 Sept 1938",
     "explanation": "The Munich Agreement on 30 September 1938 allowed Nazi Germany to annex the Sudetenland."
   },
   {
     "question": "When was the Second Sino-Japanese War?",
-    "options": ["1935-40", "1937-45", "1939-47", "1941-49"],
+    "choices": ["1935-40", "1937-45", "1939-47", "1941-49"],
     "answer": "1937-45",
     "explanation": "The Second Sino-Japanese War (1937-45) merged with World War II and ended with Japan's surrender."
   },
   {
     "question": "When was the Tripartite Pact signed?",
-    "options": ["27 Sept 1939", "27 Sept 1940", "27 Sept 1941", "27 Sept 1942"],
+    "choices": ["27 Sept 1939", "27 Sept 1940", "27 Sept 1941", "27 Sept 1942"],
     "answer": "27 Sept 1940",
     "explanation": "The Tripartite Pact on 27 September 1940 created the Axis alliance between Germany, Italy, and Japan."
   },
   {
     "question": "When did the Battle of Midway occur?",
-    "options": ["June 1941", "June 1942", "June 1943", "June 1944"],
+    "choices": ["June 1941", "June 1942", "June 1943", "June 1944"],
     "answer": "June 1942",
     "explanation": "The Battle of Midway in June 1942 was a decisive American naval victory over Japan in World War II."
   },
   {
     "question": "When was the Potsdam Agreement signed?",
-    "options": ["1 Aug 1944", "1 Aug 1945", "1 Aug 1946", "1 Aug 1947"],
+    "choices": ["1 Aug 1944", "1 Aug 1945", "1 Aug 1946", "1 Aug 1947"],
     "answer": "1 Aug 1945",
     "explanation": "The Potsdam Agreement on 1 August 1945 established Allied plans for postwar Germany."
   },
   {
     "question": "When was the First Kashmir War?",
-    "options": ["Oct 1946 to full 1947", "Oct 1947 to full 1948", "Oct 1948 to full 1949", "Oct 1949 to full 1950"],
+    "choices": ["Oct 1946 to full 1947", "Oct 1947 to full 1948", "Oct 1948 to full 1949", "Oct 1949 to full 1950"],
     "answer": "Oct 1947 to full 1948",
     "explanation": "The First Kashmir War (October 1947 to full 1948) was fought between India and Pakistan over Jammu and Kashmir."
   },
   {
     "question": "When was the Bandung Conference?",
-    "options": ["1953", "1955", "1957", "1959"],
+    "choices": ["1953", "1955", "1957", "1959"],
     "answer": "1955",
     "explanation": "The Bandung Conference in 1955 marked the beginning of the Non-Aligned Movement during the Cold War."
   },
   {
     "question": "When did the Indo-China conflict occur?",
-    "options": ["Oct - Nov 1960", "Oct - Nov 1962", "Oct - Nov 1964", "Oct - Nov 1966"],
+    "choices": ["Oct - Nov 1960", "Oct - Nov 1962", "Oct - Nov 1964", "Oct - Nov 1966"],
     "answer": "Oct - Nov 1962",
     "explanation": "The Indo-China conflict (October-November 1962) was a border war between India and China."
   },
   {
     "question": "When was the Second Kashmir War?",
-    "options": ["June - July 1963", "Agu - Sept 1965", "Oct - Nov 1967", "Dec 1969 - Jan 1970"],
+    "choices": ["June - July 1963", "Agu - Sept 1965", "Oct - Nov 1967", "Dec 1969 - Jan 1970"],
     "answer": "Agu - Sept 1965",
     "explanation": "The Second Kashmir War (August-September 1965) was another Indo-Pakistani conflict over Kashmir."
   },
   {
     "question": "When did the Bangladesh Liberation War occur?",
-    "options": ["Dec 1969", "Dec 1971", "Dec 1973", "Dec 1975"],
+    "choices": ["Dec 1969", "Dec 1971", "Dec 1973", "Dec 1975"],
     "answer": "Dec 1971",
     "explanation": "The Bangladesh Liberation War in December 1971 resulted in the creation of Bangladesh from East Pakistan."
   },
   {
     "question": "When was the Korean War?",
-    "options": ["June 1948 - July 1951", "June 1950 - July 1953", "June 1952 - July 1955", "June 1954 - July 1957"],
+    "choices": ["June 1948 - July 1951", "June 1950 - July 1953", "June 1952 - July 1955", "June 1954 - July 1957"],
     "answer": "June 1950 - July 1953",
     "explanation": "The Korean War (June 1950 - July 1953) ended in an armistice that divided Korea along the 38th parallel."
   },
   {
     "question": "When did the Iran-Iraq War occur?",
-    "options": ["1978-86", "1980-88", "1982-90", "1984-92"],
+    "choices": ["1978-86", "1980-88", "1982-90", "1984-92"],
     "answer": "1980-88",
     "explanation": "The Iran-Iraq War (1980-88) was one of the longest conventional wars of the 20th century."
   }
