@@ -1,50 +1,182 @@
 [
   {
-    "question": "When did Alexander the Great rule in the Indian subcontinent?",
-    "choices": ["336 - 23 BC", "322 - 297 BC", "268 - 232 BC", "165 - 45 BC"],
-    "answer": "336 - 23 BC",
-    "explanation": "Alexander invaded India in 326 BC during his campaign, reaching up to the Beas River before his troops refused to go further."
+    "question": "When did Alexander the Great interact with the Indian subcontinent?",
+    "choices": ["336 - 323 BC", "322 - 297 BC", "268 - 232 BC", "185 - 45 BC"],
+    "answer": "336 - 323 BC",
+    "explanation": "Alexander reached India in 326 BC during his conquests, battling Porus at the Hydaspes River before his troops mutinied."
   },
   {
-    "question": "When did Chandragupta Maurya rule?",
-    "choices": ["336 - 23 BC", "322 - 297 BC", "268 - 232 BC", "185 - 45 BC"],
+    "question": "When did Chandragupta Maurya establish the Mauryan Empire?",
+    "choices": ["336 - 323 BC", "322 - 297 BC", "268 - 232 BC", "185 - 45 BC"],
     "answer": "322 - 297 BC",
-    "explanation": "Founder of the Maurya Empire who defeated the Nanda dynasty and Seleucus Nicator."
+    "explanation": "Founded after defeating the Nanda Dynasty and Seleucus Nicator, with Chanakya as his advisor."
   },
   {
-    "question": "During which period did Ashoka the Great rule?",
+    "question": "What was Ashoka the Great's reign period?",
     "choices": ["322 - 297 BC", "268 - 232 BC", "185 - 45 BC", "127 - 50 AD"],
     "answer": "268 - 232 BC",
-    "explanation": "Ashoka ruled most of the Indian subcontinent and converted to Buddhism after the Kalinga War."
+    "explanation": "His empire stretched from Afghanistan to Bangladesh, adopting Buddhism after the Kalinga War."
   },
   {
-    "question": "When did Kanishka, the Kushan emperor rule?",
-    "choices": ["127 - 50 AD", "19 - 46 AD", "106 - 30 AD", "130 - 50 AD"],
+    "question": "When did the Indo-Greek king Menander I (Milinda) rule?",
+    "choices": ["165 - 45 BC", "19 - 46 AD", "127 - 50 AD", "130 - 50 AD"],
+    "answer": "165 - 45 BC",
+    "explanation": "Featured in Buddhist text 'Milinda Panha', his capital was at Sagala (modern Sialkot)."
+  },
+  {
+    "question": "What was Gondophernes' reign period?",
+    "choices": ["19 - 46 AD", "165 - 45 BC", "106 - 30 AD", "127 - 50 AD"],
+    "answer": "19 - 46 AD",
+    "explanation": "Parthian ruler associated with St. Thomas' visit to India according to Christian tradition."
+  },
+  {
+    "question": "When did Gautamiputra Satakarni rule the Satavahana Empire?",
+    "choices": ["106 - 30 AD", "19 - 46 AD", "127 - 50 AD", "130 - 50 AD"],
+    "answer": "106 - 30 AD",
+    "explanation": "Defeated the Western Kshatrapas, with his achievements recorded in his mother's Nashik inscription."
+  },
+  {
+    "question": "What was Kanishka's reign period of the Kushan Empire?",
+    "choices": ["127 - 50 AD", "106 - 30 AD", "130 - 50 AD", "380 - 412 AD"],
     "answer": "127 - 50 AD",
-    "explanation": "Patron of Buddhism who convened the 4th Buddhist Council in Kashmir."
+    "explanation": "Patron of Gandhara art and Mahayana Buddhism, convened the 4th Buddhist Council."
   },
   {
-    "question": "What was the reign period of Chandragupta II (Vikramaditya)?",
+    "question": "When did Rudradaman I of the Western Kshatrapas rule?",
+    "choices": ["130 - 50 AD", "127 - 50 AD", "106 - 30 AD", "380 - 412 AD"],
+    "answer": "130 - 50 AD",
+    "explanation": "Known for repairing Sudarshana Lake and his Sanskrit Junagadh inscription."
+  },
+  {
+    "question": "What was Chandragupta II Vikramaditya's reign period?",
     "choices": ["380 - 412 AD", "606 - 47 AD", "609 - 42 AD", "630 - 68 AD"],
     "answer": "380 - 412 AD",
-    "explanation": "Golden Age of Gupta Empire when Kalidasa flourished and the Iron Pillar of Delhi was erected."
+    "explanation": "Gupta Golden Age ruler, his court included Kalidasa and the Iron Pillar was erected during his reign."
   },
   {
-    "question": "When did Harshavardhana rule?",
+    "question": "When did Harshavardhana rule North India?",
     "choices": ["606 - 47 AD", "380 - 412 AD", "609 - 42 AD", "630 - 68 AD"],
     "answer": "606 - 47 AD",
-    "explanation": "Last great Hindu emperor of North India, chronicled by Xuanzang and Banabhatta."
+    "explanation": "Last major Hindu ruler of unified North India, documented by Xuanzang and Banabhatta."
   },
   {
-    "question": "What was the reign period of Akbar the Great?",
-    "choices": ["1556 - 1605 AD", "1509 - 29 AD", "1497 - 1540 AD", "1459 - 1511 AD"],
+    "question": "What was Pulakeshin II's reign period of the Chalukyas?",
+    "choices": ["609 - 42 AD", "606 - 47 AD", "630 - 68 AD", "770 - 810 AD"],
+    "answer": "609 - 42 AD",
+    "explanation": "Defeated Harsha at Narmada, with his victories documented in the Aihole inscription."
+  },
+  {
+    "question": "When did Narasimhavarman I of the Pallavas rule?",
+    "choices": ["630 - 68 AD", "609 - 42 AD", "770 - 810 AD", "814 - 78 AD"],
+    "answer": "630 - 68 AD",
+    "explanation": "Defeated Pulakeshin II, built Mamallapuram rock-cut temples, and sent naval expeditions."
+  },
+  {
+    "question": "What was Dharmapala's reign period of the Pala Empire?",
+    "choices": ["770 - 810 AD", "814 - 78 AD", "836 - 85 AD", "985 - 1014 AD"],
+    "answer": "770 - 810 AD",
+    "explanation": "Founded Vikramashila University and controlled Kannauj through the Tripartite Struggle."
+  },
+  {
+    "question": "When did Amoghavarsha I of the Rashtrakutas rule?",
+    "choices": ["814 - 78 AD", "770 - 810 AD", "836 - 85 AD", "985 - 1014 AD"],
+    "answer": "814 - 78 AD",
+    "explanation": "Wrote Kavirajamarga, moved capital to Manyakheta, and was a Jain patron."
+  },
+  {
+    "question": "What was Mihir Bhoja's reign period of the Gurjara-Pratiharas?",
+    "choices": ["836 - 85 AD", "814 - 78 AD", "985 - 1014 AD", "998 - 1030 AD"],
+    "answer": "836 - 85 AD",
+    "explanation": "Successfully defended against Arab invasions and made Kannauj his capital."
+  },
+  {
+    "question": "When did Rajaraja Chola I rule?",
+    "choices": ["985 - 1014 AD", "998 - 1030 AD", "1022 - 1064 AD", "1076 - 1126 AD"],
+    "answer": "985 - 1014 AD",
+    "explanation": "Built the Brihadeeswarar Temple, launched naval expeditions to Sri Lanka and Maldives."
+  },
+  {
+    "question": "What was Mahmud of Ghazni's reign period?",
+    "choices": ["998 - 1030 AD", "985 - 1014 AD", "1022 - 1064 AD", "1076 - 1126 AD"],
+    "answer": "998 - 1030 AD",
+    "explanation": "Conducted 17 raids into India, famously destroying the Somnath Temple in 1025."
+  },
+  {
+    "question": "When did Bhima I of the Chalukyas rule?",
+    "choices": ["1022 - 1064 AD", "998 - 1030 AD", "1076 - 1126 AD", "1397 - 1422 AD"],
+    "answer": "1022 - 1064 AD",
+    "explanation": "Rebuilt the Somnath Temple after Mahmud's raid and resisted further Ghaznavid attacks."
+  },
+  {
+    "question": "What was Vikramaditya VI's reign period of the Western Chalukyas?",
+    "choices": ["1076 - 1126 AD", "1022 - 1064 AD", "1397 - 1422 AD", "1420 - 70 AD"],
+    "answer": "1076 - 1126 AD",
+    "explanation": "Introduced the Chalukya-Vikrama era, patronized Bilhana who wrote Vikramankadevacharita."
+  },
+  {
+    "question": "When did Firuz Shah Bahmani rule the Bahmani Sultanate?",
+    "choices": ["1397 - 1422 AD", "1420 - 70 AD", "1433 - 68 AD", "1436 - 69 AD"],
+    "answer": "1397 - 1422 AD",
+    "explanation": "Founded the city of Firuzabad and established the Taraf system in the Deccan."
+  },
+  {
+    "question": "What was Zain-ul-Abidin's reign period in Kashmir?",
+    "choices": ["1420 - 70 AD", "1397 - 1422 AD", "1433 - 68 AD", "1436 - 69 AD"],
+    "answer": "1420 - 70 AD",
+    "explanation": "Called 'Bud Shah' (Great King), revived Sanskrit learning and prohibited cow slaughter."
+  },
+  {
+    "question": "When did Rana Kumbha rule Mewar?",
+    "choices": ["1433 - 68 AD", "1420 - 70 AD", "1436 - 69 AD", "1459 - 1511 AD"],
+    "answer": "1433 - 68 AD",
+    "explanation": "Built Vijay Stambh at Chittor, defeated Mahmud Khalji of Malwa, and was a scholar-king."
+  },
+  {
+    "question": "What was Mahmud Khalji's reign period of Malwa?",
+    "choices": ["1436 - 69 AD", "1433 - 68 AD", "1459 - 1511 AD", "1497 - 1540 AD"],
+    "answer": "1436 - 69 AD",
+    "explanation": "Built the Jahaz Mahal in Mandu and fought against Rana Kumbha of Mewar."
+  },
+  {
+    "question": "When did Mahmud Begada rule Gujarat?",
+    "choices": ["1459 - 1511 AD", "1436 - 69 AD", "1497 - 1540 AD", "1509 - 29 AD"],
+    "answer": "1459 - 1511 AD",
+    "explanation": "Founded Champaner, conquered Girnar and Junagadh, and had the longest Sultanate reign in Gujarat."
+  },
+  {
+    "question": "What was Prataprudra Deva's reign period of the Gajapati Kingdom?",
+    "choices": ["1497 - 1540 AD", "1459 - 1511 AD", "1509 - 29 AD", "1556 - 1605 AD"],
+    "answer": "1497 - 1540 AD",
+    "explanation": "Last great Gajapati ruler who resisted Vijayanagara and Bahmani invasions."
+  },
+  {
+    "question": "When did Krishnadevaraya rule Vijayanagara?",
+    "choices": ["1509 - 29 AD", "1497 - 1540 AD", "1556 - 1605 AD", "1699 - 1743 AD"],
+    "answer": "1509 - 29 AD",
+    "explanation": "Golden Age ruler who built the Vitthala Temple and whose court included the Ashtadiggajas."
+  },
+  {
+    "question": "What was Akbar's reign period of the Mughal Empire?",
+    "choices": ["1556 - 1605 AD", "1509 - 29 AD", "1699 - 1743 AD", "1729 - 1758 AD"],
     "answer": "1556 - 1605 AD",
-    "explanation": "Established the Mughal Empire's dominance through religious tolerance and administrative reforms."
+    "explanation": "Established Din-i-Ilahi, Mansabdari system, and conquered most of North India."
   },
   {
-    "question": "When did Maharaja Ranjit Singh rule?",
+    "question": "When did Sawai Jai Singh II rule Jaipur?",
+    "choices": ["1699 - 1743 AD", "1556 - 1605 AD", "1729 - 1758 AD", "1801 - 39 AD"],
+    "answer": "1699 - 1743 AD",
+    "explanation": "Founded Jaipur city, built Jantar Mantar observatories, and was a mathematician-king."
+  },
+  {
+    "question": "What was Marthanda Varma's reign period of Travancore?",
+    "choices": ["1729 - 1758 AD", "1699 - 1743 AD", "1801 - 39 AD", "1497 - 1540 AD"],
+    "answer": "1729 - 1758 AD",
+    "explanation": "Defeated Dutch at Colachel battle, established centralized administration in Kerala."
+  },
+  {
+    "question": "When did Maharaja Ranjit Singh rule the Sikh Empire?",
     "choices": ["1801 - 39 AD", "1729 - 1758 AD", "1699 - 1743 AD", "1556 - 1605 AD"],
     "answer": "1801 - 39 AD",
-    "explanation": "Founder of the Sikh Empire who united the Punjab region and modernized his army."
+    "explanation": "Established secular rule in Punjab with French-trained army and golden-domed Harmandir Sahib."
   }
 ]
