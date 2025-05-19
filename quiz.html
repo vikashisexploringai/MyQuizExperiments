@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>History Quiz</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div id="question-count-selection">
+            <h1>Select Number of Questions</h1>
+            <div class="count-buttons" id="count-buttons">
+                <!-- Dynamically populated -->
+            </div>
+        </div>
+
+        <div id="quiz-container" style="display: none;">
+            <h1 id="theme-title"></h1>
+            <div class="progress-container">
+                <div class="progress-bar" id="progress-bar"></div>
+            </div>
+            <div class="question-container">
+                <h2 id="question-text"></h2>
+                <div class="options-container" id="options-container"></div>
+            </div>
+            <div class="explanation-container" id="explanation-container" style="display: none;">
+                <p id="explanation-text"></p>
+                <button id="next-button">Next Question</button>
+            </div>
+            <div class="result-container" id="result-container" style="display: none;">
+                <h2>Quiz Completed!</h2>
+                <p>Your score: <span id="score">0</span>/<span id="total">0</span></p>
+                <button onclick="location.reload()">Take Another Quiz</button>
+                <button onclick="window.location.href='index.html'">Choose Different Theme</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
