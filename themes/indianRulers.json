@@ -1,0 +1,50 @@
+[
+  {
+    "question": "When did Alexander the Great rule in the Indian subcontinent?",
+    "choices": ["336 - 23 BC", "322 - 297 BC", "268 - 232 BC", "165 - 45 BC"],
+    "answer": "336 - 23 BC",
+    "explanation": "Alexander invaded India in 326 BC during his campaign, reaching up to the Beas River before his troops refused to go further."
+  },
+  {
+    "question": "When did Chandragupta Maurya rule?",
+    "choices": ["336 - 23 BC", "322 - 297 BC", "268 - 232 BC", "185 - 45 BC"],
+    "answer": "322 - 297 BC",
+    "explanation": "Founder of the Maurya Empire who defeated the Nanda dynasty and Seleucus Nicator."
+  },
+  {
+    "question": "During which period did Ashoka the Great rule?",
+    "choices": ["322 - 297 BC", "268 - 232 BC", "185 - 45 BC", "127 - 50 AD"],
+    "answer": "268 - 232 BC",
+    "explanation": "Ashoka ruled most of the Indian subcontinent and converted to Buddhism after the Kalinga War."
+  },
+  {
+    "question": "When did Kanishka, the Kushan emperor rule?",
+    "choices": ["127 - 50 AD", "19 - 46 AD", "106 - 30 AD", "130 - 50 AD"],
+    "answer": "127 - 50 AD",
+    "explanation": "Patron of Buddhism who convened the 4th Buddhist Council in Kashmir."
+  },
+  {
+    "question": "What was the reign period of Chandragupta II (Vikramaditya)?",
+    "choices": ["380 - 412 AD", "606 - 47 AD", "609 - 42 AD", "630 - 68 AD"],
+    "answer": "380 - 412 AD",
+    "explanation": "Golden Age of Gupta Empire when Kalidasa flourished and the Iron Pillar of Delhi was erected."
+  },
+  {
+    "question": "When did Harshavardhana rule?",
+    "choices": ["606 - 47 AD", "380 - 412 AD", "609 - 42 AD", "630 - 68 AD"],
+    "answer": "606 - 47 AD",
+    "explanation": "Last great Hindu emperor of North India, chronicled by Xuanzang and Banabhatta."
+  },
+  {
+    "question": "What was the reign period of Akbar the Great?",
+    "choices": ["1556 - 1605 AD", "1509 - 29 AD", "1497 - 1540 AD", "1459 - 1511 AD"],
+    "answer": "1556 - 1605 AD",
+    "explanation": "Established the Mughal Empire's dominance through religious tolerance and administrative reforms."
+  },
+  {
+    "question": "When did Maharaja Ranjit Singh rule?",
+    "choices": ["1801 - 39 AD", "1729 - 1758 AD", "1699 - 1743 AD", "1556 - 1605 AD"],
+    "answer": "1801 - 39 AD",
+    "explanation": "Founder of the Sikh Empire who united the Punjab region and modernized his army."
+  }
+]
