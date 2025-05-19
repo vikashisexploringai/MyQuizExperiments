@@ -1,0 +1,229 @@
+[
+  // Exact Birth Dates
+  {
+    "question": "When was Keshub Chandra Sen born?",
+    "choices": ["1836", "1838", "1840", "1842"],
+    "answer": "1838",
+    "explanation": "Keshub Chandra Sen, the Indian philosopher and social reformer, was born in 1838."
+  },
+  {
+    "question": "When and where was Mahatma Gandhi born?",
+    "choices": ["2 Oct 1869, Porbandar", "14 Nov 1889, Prayagraj", "31 Oct 1875, Nadiad", "23 Jan 1897, Cuttack"],
+    "answer": "2 Oct 1869, Porbandar",
+    "explanation": "The Father of the Nation was born on 2 October 1869 in Porbandar, Gujarat."
+  },
+  {
+    "question": "When and where was Jawaharlal Nehru born?",
+    "choices": ["2 Oct 1869, Porbandar", "14 Nov 1889, Prayagraj", "31 Oct 1875, Nadiad", "23 Jan 1897, Cuttack"],
+    "answer": "14 Nov 1889, Prayagraj",
+    "explanation": "India's first Prime Minister was born on 14 November 1889 in Prayagraj (Allahabad)."
+  },
+  {
+    "question": "When and where was Sardar Vallabhbhai Patel born?",
+    "choices": ["2 Oct 1869, Porbandar", "14 Nov 1889, Prayagraj", "31 Oct 1875, Nadiad", "23 Jan 1897, Cuttack"],
+    "answer": "31 Oct 1875, Nadiad",
+    "explanation": "The Iron Man of India was born on 31 October 1875 in Nadiad, Gujarat."
+  },
+  {
+    "question": "When and where was Subhas Chandra Bose born?",
+    "choices": ["2 Oct 1869, Porbandar", "14 Nov 1889, Prayagraj", "31 Oct 1875, Nadiad", "23 Jan 1897, Cuttack"],
+    "answer": "23 Jan 1897, Cuttack",
+    "explanation": "Netaji was born on 23 January 1897 in Cuttack, Odisha."
+  },
+  {
+    "question": "When and where was Bhagat Singh born?",
+    "choices": ["28 Sept 1907, Banga", "14 Apr 1891, Mhow", "1883, Nashik", "3 Dec 1884, Ziradei"],
+    "answer": "28 Sept 1907, Banga",
+    "explanation": "The revolutionary martyr was born on 28 September 1907 in Banga, now in Pakistan."
+  },
+  {
+    "question": "When and where was Dr. B.R. Ambedkar born?",
+    "choices": ["28 Sept 1907, Banga", "14 Apr 1891, Mhow", "1883, Nashik", "3 Dec 1884, Ziradei"],
+    "answer": "14 Apr 1891, Mhow",
+    "explanation": "The architect of Indian Constitution was born on 14 April 1891 in Mhow, Madhya Pradesh."
+  },
+  {
+    "question": "When and where was Veer Savarkar born?",
+    "choices": ["1881", "1883", "1885", "1887"],
+    "answer": "1883",
+    "explanation": "The revolutionary and political leader was born in 1883 in Nashik, Maharashtra."
+  },
+  {
+    "question": "When and where was Dr. Rajendra Prasad born?",
+    "choices": ["3 Dec 1884, Ziradei", "14 Apr 1891, Mhow", "1883, Nashik", "28 Sept 1907, Banga"],
+    "answer": "3 Dec 1884, Ziradei",
+    "explanation": "India's first President was born on 3 December 1884 in Ziradei, Bihar."
+  },
+  {
+    "question": "When and where was Raja Ram Mohan Roy born?",
+    "choices": ["1770", "1772", "1774", "1776"],
+    "answer": "1772",
+    "explanation": "The Father of Indian Renaissance was born in 1772 in Radhanagore, West Bengal."
+  },
+  {
+    "question": "When and where was Indira Gandhi born?",
+    "choices": ["1915", "1917", "1919", "1921"],
+    "answer": "1917",
+    "explanation": "India's first female Prime Minister was born in 1917 in Prayagraj."
+  },
+
+  // Birth Decades
+  {
+    "question": "Which decade were these personalities born in: Ram Mohan Roy, Bahadur Shah Zafar, Kunwar Singh?",
+    "choices": ["1760s", "1770s", "1780s", "1790s"],
+    "answer": "1770s",
+    "explanation": "Ram Mohan Roy (1772), Bahadur Shah Zafar (1775), and Kunwar Singh (1777) were all born in the 1770s."
+  },
+  {
+    "question": "In which year were these leaders born: Syed Ahmed Khan and Debendranath Tagore?",
+    "choices": ["1815", "1817", "1819", "1821"],
+    "answer": "1817",
+    "explanation": "Both Syed Ahmed Khan and Debendranath Tagore were born in 1817."
+  },
+  {
+    "question": "Which decade saw the birth of these reformers: Vidyasagar, Dayanand, Naoroji, Phule, Mangal Pandey, Rani Laxmibai?",
+    "choices": ["1810s", "1820s", "1830s", "1840s"],
+    "answer": "1820s",
+    "explanation": "These prominent figures of Indian reform and rebellion were all born in the 1820s."
+  },
+  {
+    "question": "Which decade were these leaders born in: M.G. Ranade and Surendranath Banerjee?",
+    "choices": ["1830s", "1840s", "1850s", "1860s"],
+    "answer": "1840s",
+    "explanation": "Both Ranade and Banerjee, early nationalist leaders, were born in the 1840s."
+  },
+  {
+    "question": "Which decade saw the birth of these leaders: Tilak, Narayana Guru, and Bipin Chandra Pal?",
+    "choices": ["1840s", "1850s", "1860s", "1870s"],
+    "answer": "1850s",
+    "explanation": "The 'Lal-Bal-Pal' trio were all born in the 1850s - Tilak (1856), Narayana Guru (1855), Bipin Pal (1858)."
+  },
+  {
+    "question": "Which decade were these personalities born in: Motilal Nehru, Rabindranath Tagore, Bikaji Cama, Vivekananda, Lajpat Rai, Gokhale, and Gandhi?",
+    "choices": ["1850s", "1860s", "1870s", "1880s"],
+    "answer": "1860s",
+    "explanation": "This remarkable generation of leaders and thinkers were all born in the 1860s."
+  },
+  {
+    "question": "Which decade saw the birth of these leaders: Chittaranjan Das, Aurobindo Ghosh, Tej Bahadur Sapru, Jinnah, and Sarojini Naidu?",
+    "choices": ["1860s", "1870s", "1880s", "1890s"],
+    "answer": "1870s",
+    "explanation": "These prominent figures of the independence movement were all born in the 1870s."
+  },
+  {
+    "question": "Which decade were these personalities born in: Savarkar, Rajendra Prasad, Rash Behari Bose, Ramanujan, and Nehru?",
+    "choices": ["1870s", "1880s", "1890s", "1900s"],
+    "answer": "1880s",
+    "explanation": "This influential group of leaders and scholars were all born in the 1880s."
+  },
+  {
+    "question": "Which decade saw the birth of these figures: Ambedkar and Sachin Sanyal?",
+    "choices": ["1880s", "1890s", "1900s", "1910s"],
+    "answer": "1890s",
+    "explanation": "Both Dr. Ambedkar (1891) and revolutionary Sachin Sanyal (1893) were born in the 1890s."
+  },
+  {
+    "question": "Which decade were these revolutionaries born in: Chandrashekhar Azad, Sukhdev, Bhagat Singh, and Rajguru?",
+    "choices": ["1890s", "1900s", "1910s", "1920s"],
+    "answer": "1900s",
+    "explanation": "These young martyrs of the independence movement were all born in the first decade of the 20th century."
+  },
+
+  // Death Dates
+  {
+    "question": "When and where did Raja Ram Mohan Roy die?",
+    "choices": ["1831, London", "1833, Bristol", "1835, Paris", "1837, Calcutta"],
+    "answer": "1833, Bristol",
+    "explanation": "The great reformer died on 27 September 1833 in Bristol, UK during a visit."
+  },
+  {
+    "question": "When and where did Jyotiba Phule die?",
+    "choices": ["1885", "1890", "1895", "1900"],
+    "answer": "1890",
+    "explanation": "The social reformer died on 28 November 1890 in Pune."
+  },
+  {
+    "question": "When and where did Swami Vivekananda die?",
+    "choices": ["1900, Madras", "1902, Howrah", "1904, Varanasi", "1906, Calcutta"],
+    "answer": "1902, Howrah",
+    "explanation": "The spiritual leader died on 4 July 1902 in Belur Math, Howrah at age 39."
+  },
+  {
+    "question": "When and where did Gopal Krishna Gokhale die?",
+    "choices": ["1910", "1915", "1920", "1925"],
+    "answer": "1915",
+    "explanation": "The moderate leader died on 19 February 1915 in Mumbai."
+  },
+  {
+    "question": "When and where did Dadabhai Naoroji die?",
+    "choices": ["1915", "1917", "1919", "1921"],
+    "answer": "1917",
+    "explanation": "The 'Grand Old Man of India' died on 30 June 1917 in Mumbai at age 91."
+  },
+  {
+    "question": "When and where did Bal Gangadhar Tilak die?",
+    "choices": ["1915", "1920", "1925", "1930"],
+    "answer": "1920",
+    "explanation": "The 'Father of Indian Unrest' died on 1 August 1920 in Mumbai."
+  },
+  {
+    "question": "When and where did Bhagat Singh die?",
+    "choices": ["23 Mar 1929", "23 Mar 1930", "23 Mar 1931", "23 Mar 1932"],
+    "answer": "23 Mar 1931",
+    "explanation": "The revolutionary was executed on 23 March 1931 in Lahore Jail at age 23."
+  },
+  {
+    "question": "When and where did Rabindranath Tagore die?",
+    "choices": ["1936", "1941", "1946", "1951"],
+    "answer": "1941",
+    "explanation": "The Nobel laureate died on 7 August 1941 in Kolkata at age 80."
+  },
+  {
+    "question": "When and where did Mahatma Gandhi die?",
+    "choices": ["30 Jan 1946", "30 Jan 1947", "30 Jan 1948", "30 Jan 1949"],
+    "answer": "30 Jan 1948",
+    "explanation": "The Father of the Nation was assassinated on 30 January 1948 in New Delhi."
+  },
+  {
+    "question": "When and where did Sri Aurobindo die?",
+    "choices": ["1945", "1950", "1955", "1960"],
+    "answer": "1950",
+    "explanation": "The philosopher-yogi died on 5 December 1950 in Puducherry."
+  },
+  {
+    "question": "When and where did Sardar Vallabhbhai Patel die?",
+    "choices": ["15 Dec 1948", "15 Dec 1950", "15 Dec 1952", "15 Dec 1954"],
+    "answer": "15 Dec 1950",
+    "explanation": "The Iron Man of India died on 15 December 1950 in Mumbai."
+  },
+  {
+    "question": "When and where did Dr. B.R. Ambedkar die?",
+    "choices": ["6 Dec 1954", "6 Dec 1956", "6 Dec 1958", "6 Dec 1960"],
+    "answer": "6 Dec 1956",
+    "explanation": "The architect of Indian Constitution died on 6 December 1956 in Delhi."
+  },
+  {
+    "question": "When and where did Dr. Rajendra Prasad die?",
+    "choices": ["1961", "1963", "1965", "1967"],
+    "answer": "1963",
+    "explanation": "India's first President died on 28 February 1963 in Patna."
+  },
+  {
+    "question": "When and where did Jawaharlal Nehru die?",
+    "choices": ["27 May 1962", "27 May 1964", "27 May 1966", "27 May 1968"],
+    "answer": "27 May 1964",
+    "explanation": "India's first PM died on 27 May 1964 in New Delhi."
+  },
+  {
+    "question": "When and where did Veer Savarkar die?",
+    "choices": ["1964", "1966", "1968", "1970"],
+    "answer": "1966",
+    "explanation": "The political leader died on 26 February 1966 in Mumbai."
+  },
+  {
+    "question": "When and where did Indira Gandhi die?",
+    "choices": ["31 Oct 1982", "31 Oct 1984", "31 Oct 1986", "31 Oct 1988"],
+    "answer": "31 Oct 1984",
+    "explanation": "India's first female PM was assassinated on 31 October 1984 in New Delhi."
+  }
+]
