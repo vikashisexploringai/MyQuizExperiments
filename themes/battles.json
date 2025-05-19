@@ -352,5 +352,101 @@
     "choices": ["1978-86", "1980-88", "1982-90", "1984-92"],
     "answer": "1980-88",
     "explanation": "The Iran-Iraq War (1980-88) was one of the longest conventional wars of the 20th century."
+  },
+  {
+    "question": "When did the Paika rebellion take place?",
+    "choices": ["1805", "1817", "1823", "1831"],
+    "answer": "1817",
+    "explanation": "The Paika Rebellion (1817) was an armed uprising against British rule in Odisha led by Bakshi Jagabandhu Bidyadhar. It's considered one of the earliest rebellions against British colonial rule in India."
+  },
+  {
+    "question": "When did the Indigo revolt of Nadia occur?",
+    "choices": ["1835-36", "1859-60", "1867-68", "1871-72"],
+    "answer": "1859-60",
+    "explanation": "The Indigo revolt (1859-60) was a peasant movement in Bengal against forced indigo cultivation. It became famous through Dinabandhu Mitra's play 'Nil Darpan' which exposed the exploitation by British planters."
+  },
+  {
+    "question": "When was the Kuka movement led by the Namdharis?",
+    "choices": ["1857", "1865", "1872", "1880"],
+    "answer": "1872",
+    "explanation": "The Kuka movement (1872) was a religious-political movement led by Guru Ram Singh against British rule. The British suppressed it brutally, executing many followers at Malerkotla."
+  },
+  {
+    "question": "When did the Pabna peasant uprising occur?",
+    "choices": ["1850-52", "1865-67", "1873-76", "1881-83"],
+    "answer": "1873-76",
+    "explanation": "The Pabna uprising (1873-76) in Bengal was against zamindari oppression and excessive land taxes. It led to the Bengal Tenancy Act of 1885 which gave some rights to tenants."
+  },
+  {
+    "question": "When did the Deccan peasant uprising against moneylenders happen?",
+    "choices": ["1857", "1867", "1875", "1882"],
+    "answer": "1875",
+    "explanation": "The Deccan riots (1875) in Maharashtra were against exploitative moneylenders (mostly Gujaratis). This led to the Deccan Agriculturists' Relief Act of 1879 to protect peasants from indebtedness."
+  },
+  {
+    "question": "When was the Ramosi uprising?",
+    "choices": ["1857", "1862", "1877", "1885"],
+    "answer": "1877",
+    "explanation": "The Ramosi uprising (1877) in Maharashtra was led by Vasudev Balwant Phadke against British famine policies. It marked early revolutionary activity in Western India."
+  },
+  {
+    "question": "When did the Santhal rebellion take place?",
+    "choices": ["1835-36", "1855-56", "1867-68", "1879-80"],
+    "answer": "1855-56",
+    "explanation": "The Santhal Hul (1855-56) was a massive tribal rebellion in Jharkhand/Bengal against British land revenue systems and money lenders. Led by Sidhu and Kanhu Murmu."
+  },
+  {
+    "question": "When did the Kol rebellion occur?",
+    "choices": ["1817-19", "1829-39", "1845-47", "1853-55"],
+    "answer": "1829-39",
+    "explanation": "The Kol rebellion (1829-39) in Chotanagpur was a tribal uprising against land alienation and exploitation by non-tribal settlers and British policies."
+  },
+  {
+    "question": "When was the Munda rebellion led by Birsa Munda?",
+    "choices": ["1875-78", "1885-88", "1895-1900", "1905-08"],
+    "answer": "1895-1900",
+    "explanation": "The Munda Ulgulan (1895-1900) in Jharkhand was led by Birsa Munda against British land laws and missionary activities. It led to the Chotanagpur Tenancy Act of 1908."
+  },
+  {
+    "question": "When did the Pagri Sambhal Jatta movement occur?",
+    "choices": ["1899", "1907", "1915", "1921"],
+    "answer": "1907",
+    "explanation": "The Pagri Sambhal Jatta movement (1907) in Punjab protested against the British Colonization Act that threatened peasant land rights. Famous for Bhagat Singh's uncle Ajit Singh's leadership."
+  },
+  {
+    "question": "When was the Ghadar Conspiracy?",
+    "choices": ["Jan 1914", "Feb 1915", "Aug 1916", "Mar 1917"],
+    "answer": "Feb 1915",
+    "explanation": "The Ghadar Mutiny (Feb 1915) was an international conspiracy by Indian revolutionaries based in North America to overthrow British rule during WWI. Centered around the Ghadar Party formed in 1913."
+  },
+  {
+    "question": "When did the Akali Movement take place?",
+    "choices": ["1910-15", "1920-25", "1930-35", "1940-42"],
+    "answer": "1920-25",
+    "explanation": "The Akali movement (1920-25) was a Sikh struggle to reform gurudwara management from corrupt mahants. It led to the Sikh Gurdwara Act 1925 and the formation of SGPC."
+  },
+  {
+    "question": "When did the Mappila rebellion occur?",
+    "choices": ["1915", "1921", "1928", "1934"],
+    "answer": "1921",
+    "explanation": "The Moplah rebellion (1921) in Malabar was a peasant uprising against Hindu landlords and British rule, which later took communal tones. Part of the Khilafat Movement."
+  },
+  {
+    "question": "When was the Rampa/Manyam rebellion?",
+    "choices": ["1910-12", "1922-24", "1930-32", "1938-40"],
+    "answer": "1922-24",
+    "explanation": "The Rampa rebellion (1922-24) in Andhra was a tribal uprising led by Alluri Sitarama Raju against British forest laws and exploitation. Famous for guerrilla warfare tactics."
+  },
+  {
+    "question": "When did the Vaikom Satyagraha take place?",
+    "choices": ["1915-17", "1924-25", "1930-31", "1936-37"],
+    "answer": "1924-25",
+    "explanation": "The Vaikom Satyagraha (1924-25) in Kerala protested temple entry restrictions for lower castes. Led by K. Madhavan, K.P. Kesava Menon and supported by Gandhi and Periyar."
+  },
+  {
+    "question": "When was the Guruvayur Satyagraha?",
+    "choices": ["1921-22", "1927-28", "1931-32", "1938-39"],
+    "answer": "1931-32",
+    "explanation": "The Guruvayur Satyagraha (1931-32) continued the temple entry movement in Kerala. Notable for K. Kelappan's leadership and participation by women like A.K. Gopalan's wife."
   }
 ]
