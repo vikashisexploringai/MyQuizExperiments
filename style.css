@@ -47,6 +47,28 @@ button:hover {
     transform: translateY(-2px);
 }
 
+/* Add this to your style.css file, replacing any existing #next-button styles */
+
+#next-button {
+    width: 100%;
+    background-color: #f8bb22;  /* Bright yellow color */
+    color: #1a1a2e;            /* Dark text for contrast */
+    font-weight: bold;
+    margin-top: 1rem;
+    padding: 1rem;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#next-button:hover {
+    background-color: #e6a917;  /* Slightly darker yellow on hover */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
 .progress-container {
     width: 100%;
     background-color: #0f3460;
