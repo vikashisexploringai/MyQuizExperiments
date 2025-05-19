@@ -68,6 +68,13 @@ button:hover {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
+.theme-prompt {
+    font-size: 1.3rem;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #f8bb22; /* Optional: Match heading color */
+}
 
 .progress-container {
     width: 100%;
